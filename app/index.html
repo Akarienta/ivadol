@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Test</title>
+      <!-- build:css(.tmp) css/style.min.css -->
+      <link rel="stylesheet" href="styles/main.css">
+      <!-- endbuild -->
+   </head>
+
+   <body ng-app="app" ng-strict-di>
+      <div ng-controller="MainController as vm">
+         <h1 translate>Vítejte v mé aplikaci!</h1>
+
+         <h2>{{vm.title}}</h2>
+
+         <h2 translate>Jak se jmenujete?</h2>
+         <button ng-click="vm.changeLanguage('cs_CZ')">Česky</button>
+         <button ng-click="vm.changeLanguage('en_US')">In English</button>
+      </div>
+
+      <!-- TODO:
+        browser prefixy pro CSS
+        hodit na GitHub (i Fakturaror)
+        Neat + Burboun
+        vyvinout web :-)
+      -->
+
+      <!-- build:js(.) js/vendor.min.js -->
+      <!-- bower:js -->
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angular-route/angular-route.js"></script>
+      <script src="bower_components/angular-gettext/dist/angular-gettext.js"></script>
+      <!-- endbower -->
+      <!-- endbuild -->
+
+      <!-- build:js(.tmp) js/scripts.min.js -->
+      <script src="scripts/appModule.js"></script>
+      <script src="scripts/mainController.js"></script>
+      <script src="scripts/translations.js"></script>
+      <!-- endbuild -->
+
+   </body>
+</html>

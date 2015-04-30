@@ -1,0 +1,17 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: app/index.html:14
+msgid "Jak se jmenujete?"
+msgstr ""
+
+#: .tmp/scripts/mainController.js:6
+msgid "Na něco se tě zeptám..."
+msgstr ""
+
+#: app/index.html:12
+msgid "Vítejte v mé aplikaci!"
+msgstr ""
