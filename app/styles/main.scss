@@ -1,4 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Quando&subset=latin,latin-ext);
+@import 'bourbon';
+@import 'neat';
 
 * {
    font-family: Quando, sans-serif, Arial;
@@ -6,4 +8,14 @@
 
 h1 {
    color: orange;
+}
+
+section {
+   @include outer-container;
+   aside {
+      @include span-columns(3);
+   }
+   article {
+      @include span-columns(9);
+   }
 }

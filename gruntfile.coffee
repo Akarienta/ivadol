@@ -25,7 +25,7 @@ module.exports = (grunt) ->
       # auto insertion of scrips from bower_components
       wiredep:
          app:
-            src: ['<%= config.app %>/index.html']
+            src: '<%= config.app %>/index.html'
             ignorePath: /\.\.\//
 
       # grunt sass
@@ -33,12 +33,26 @@ module.exports = (grunt) ->
          compile:
             options:
                style: 'expanded'
+               loadPath: [
+                  'bower_components/bourbon/app/assets/stylesheets'
+                  'bower_components/neat/app/assets/stylesheets'
+               ]
             files: [
                expand: true
                cwd: '<%= config.app %>/styles'
-               src: ['**/*.scss']
+               src: '**/*.scss'
                dest: '.tmp/styles'
                ext: '.css'
+            ]
+
+      # adds browser prefixes
+      autoprefixer:
+         all:
+            files: [
+               expand: true,
+               cwd: '.tmp/styles'
+               src: '**/*.css',
+               dest: '.tmp/styles'
             ]
 
       # auto annotation of AngularJS injection
@@ -82,15 +96,15 @@ module.exports = (grunt) ->
             tasks: ['ngAnnotate']
          sass:
             files: '<%= sass.compile.files[0].src %>'
-            tasks: ['clean:sass', 'sass:compile']
+            tasks: ['clean:sass', 'sass:compile', 'autoprefixer']
          livereload:
             options:
                livereload: '<%= connect.options.livereload %>'
             files: [
-               '<%= config.app %>/{,*/}*.html'
-               '.tmp/styles/{,*/}*.css'
-               '.tmp/scripts/{,*/}*.js'
-               '<%= config.app %>/images/{,*/}*.{png,jpg,jpeg,gif,svg}'
+               '<%= config.app %>/**/*.html'
+               '.tmp/styles/**/*.css'
+               '.tmp/scripts/**/*.js'
+               '<%= config.app %>/images/**/*.{png,jpg,jpeg,gif,svg}'
             ]
 
       # grunt copy
@@ -101,14 +115,14 @@ module.exports = (grunt) ->
                   # pages
                   expand: true,
                   cwd: '<%= config.app %>',
-                  src: ['**/*.html'],
+                  src: '**/*.html',
                   dest: '<%= config.dist %>'
                }
                {
                   # images
                   expand: true,
                   cwd: '<%= config.app %>/images',
-                  src: ['**/*.{png,jpg,jpeg,gif,svg}'],
+                  src: '**/*.{png,jpg,jpeg,gif,svg}',
                   dest: '<%= config.dist %>/img'
                }
             ]
@@ -132,7 +146,7 @@ module.exports = (grunt) ->
             files: [
                expand: true,
                cwd: '<%= config.dist %>',
-               src: ['**/*.html'],
+               src: '**/*.html',
                dest: '<%= config.dist %>'
             ]
 
@@ -160,6 +174,7 @@ module.exports = (grunt) ->
       'clean:dev'
       'wiredep'
       'sass'
+      'autoprefixer'
       'ngAnnotate'
       'connect:livereload'
       'watch'
@@ -169,6 +184,7 @@ module.exports = (grunt) ->
       'clean:dist'
       'wiredep'
       'sass'
+      'autoprefixer'
       'ngAnnotate'
       'copy:dist'
       'useminPrepare'
