@@ -9,13 +9,19 @@
    function MainController(gettextCatalog, $rootScope) {
       var vm = this;
 
-      vm.title = gettextCatalog.getString('Na něco se tě zeptám...');
+      vm.isMobileMenuVisible = false;
+
       vm.changeLanguage = changeLanguage;
+      vm.showHideMobileMenu = showHideMobileMenu;
 
       ////////////
 
       function changeLanguage(lang) {
          return $rootScope.$emit('changeLanguage', lang);
+      }
+
+      function showHideMobileMenu() {
+         vm.isMobileMenuVisible = !vm.isMobileMenuVisible;
       }
    }
 

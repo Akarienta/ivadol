@@ -1,0 +1,33 @@
+@import 'mixins';
+
+// breakpoints
+$medium: 640px;
+$large: 1024px;
+
+// media queries
+@mixin media($breakpoint) {
+   @if $breakpoint == small {
+      @media only screen and (max-width: $medium) {
+         @content;
+      }
+   } @else if $breakpoint == medium {
+      @media only screen and (min-width: ($medium + 1px) and (max-width: $large)) {
+         @content;
+      }
+   } @else if $breakpoint == medium-up {
+      @media only screen and (min-width: ($medium + 1px)) {
+         @content;
+      }
+   } @else if $breakpoint == large {
+      @media only screen and (min-width: ($large + 1px)) {
+         @content;
+      }
+   }
+}
+
+//  grid
+@mixin column($percentage, $float-direction:left) {
+   width: 100% * $percentage;
+   float: $float-direction;
+}
+

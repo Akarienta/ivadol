@@ -2,39 +2,66 @@
 <html lang="en">
    <head>
       <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Test</title>
       <!-- build:css(.tmp) css/style.min.css -->
       <link rel="stylesheet" href="styles/main.css">
       <!-- endbuild -->
+      <!-- favicon start -->
+      <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png">
+      <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png">
+      <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32">
+      <link rel="icon" type="image/png" href="/favicon/favicon-194x194.png" sizes="194x194">
+      <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+      <link rel="icon" type="image/png" href="/favicon/android-chrome-192x192.png" sizes="192x192">
+      <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16">
+      <link rel="manifest" href="/favicon/manifest.json">
+      <link rel="shortcut icon" href="/favicon/favicon.ico">
+      <meta name="msapplication-TileColor" content="#ffffff">
+      <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
+      <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+      <meta name="theme-color" content="#ffffff">
+      <!-- favicon end -->
    </head>
 
-   <body ng-app="app" ng-strict-di>
-      <div ng-controller="MainController as vm">
-         <h1 translate>Vítejte v mé aplikaci!</h1>
+   <body ng-app="app" ng-controller="MainController as vm" ng-strict-di>
 
-         <h2>{{vm.title}}</h2>
-
-         <h2 translate>Jak se jmenujete?</h2>
-         <button ng-click="vm.changeLanguage('cs_CZ')">Česky</button>
-         <button ng-click="vm.changeLanguage('en_US')">In English</button>
-      </div>
-
-      <section>
-         <aside>What is it about?</aside>
-         <article>Neat is an open source semantic grid framework built on top of Sass and Bourbon…</article>
-      </section>
+      <header class="header-c">
+         <!-- TODO: logo -->
+         <!--<div id="cd-logo"><a href="#0"><img src="img/cd-logo.svg" alt="Logo"></a></div>-->
+         <nav class="main-nav-c" ng-click="vm.showHideMobileMenu()">
+            <!-- TODO predelat kvuli animacim -->
+            <ul ng-class="{'is-visible': vm.isMobileMenuVisible}" class="mobile-menu">
+               <li><a href="">Home</a></li>
+               <li><a href="">About</a></li>
+               <li><a href="">Pricing</a></li>
+               <li><a href="">Gallery</a></li>
+               <li><a href="">Contact</a></li>
+            </ul>
+         </nav>
+      </header>
 
       <!-- build:js(.) js/vendor.min.js -->
       <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
       <script src="bower_components/angular/angular.js"></script>
       <script src="bower_components/angular-route/angular-route.js"></script>
       <script src="bower_components/angular-gettext/dist/angular-gettext.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
       <!-- endbower -->
       <!-- endbuild -->
 
       <!-- build:js(.tmp) js/scripts.min.js -->
       <script src="scripts/appModule.js"></script>
       <script src="scripts/mainController.js"></script>
+      <script src="scripts/mobileMenuAnimation.js"></script>
       <script src="scripts/translations.js"></script>
       <!-- endbuild -->
 

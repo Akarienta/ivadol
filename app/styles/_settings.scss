@@ -1,0 +1,30 @@
+// general
+$base-size: 16px;
+
+// fonts
+@import url(http://fonts.googleapis.com/css?family=Quando&subset=latin,latin-ext);
+$primary-font: Quando, sans-serif;
+
+// header
+$header-size-small: 50px;
+$header-size-medium-up: 70px;
+$menu-icon-size-small: 44px;
+
+// colors
+$color-1: #3C3C3B;
+$color-2: #3AAA35;
+$color-3: #9dd49b;
+$color-4: #9E9EB6;
+$dark: #181817;
+
+$primary-color: #3AAA35;
+$primary-l1-color: #3ba936;
+$primary-l2-color: #55aa55;
+$primary-l3-color: #9dd49b;
+$secondary-color: #3C3C3B;
+$secondary-d1-color: #181817;
+$secondary-l1-color: #808080;
+$secondary-l2-color: #9e9e9d;
+$alert-v1-color: #FF0035;
+$alert-v1-color: #ab363c;
+$highlight-color: #9E9EB6;

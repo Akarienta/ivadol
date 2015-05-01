@@ -125,6 +125,13 @@ module.exports = (grunt) ->
                   src: '**/*.{png,jpg,jpeg,gif,svg}',
                   dest: '<%= config.dist %>/img'
                }
+               {
+                  # favicon
+                  expand: true,
+                  cwd: '<%= config.app %>/favicon',
+                  src: '**/*.{png,ico,xml,json}',
+                  dest: '<%= config.dist %>/favicon'
+               }
             ]
 
       # preparation of CSS and JS minification
