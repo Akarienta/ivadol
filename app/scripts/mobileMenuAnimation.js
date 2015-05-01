@@ -3,19 +3,17 @@
 
    angular
       .module('app')
-      .animation('.mobile-menu', function () {
-         var SHOW_CLASS = 'is-visible';
+      .animation('.menu', function () {
+         var HIDE_CLASS = 'ng-hide';
          return {
             removeClass: function (element, className, done) {
-               console.log('volam nahoru');
-               if (className === SHOW_CLASS) {
-                  element.slideUp(done);
+               if (className === HIDE_CLASS) {
+                  element.slideDown(done);
                }
             },
             addClass: function (element, className, done) {
-               console.log('volam dolu');
-               if (className === SHOW_CLASS) {
-                  element.hide().slideDown(done);
+               if (className === HIDE_CLASS) {
+                  element.slideUp(done);
                }
             }
          };

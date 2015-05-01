@@ -36,6 +36,7 @@ module.exports = (grunt) ->
                loadPath: [
                   'bower_components/bourbon/app/assets/stylesheets'
                   'bower_components/neat/app/assets/stylesheets'
+                  'bower_components/font-awsome/scss'
                ]
             files: [
                expand: true
@@ -132,6 +133,23 @@ module.exports = (grunt) ->
                   src: '**/*.{png,ico,xml,json}',
                   dest: '<%= config.dist %>/favicon'
                }
+               {
+                  # fonts
+                  expand: true,
+                  cwd: '.tmp/fonts',
+                  src: '**/*.{otf,eot,svg,ttf,woff,woff2}',
+                  dest: '<%= config.dist %>/fonts'
+               }
+            ]
+         dev:
+            files: [
+               {
+                  # fonts
+                  expand: true,
+                  cwd: 'bower_components/font-awsome/fonts',
+                  src: '**/*.{otf,eot,svg,ttf,woff,woff2}',
+                  dest: '.tmp/fonts'
+               }
             ]
 
       # preparation of CSS and JS minification
@@ -183,6 +201,7 @@ module.exports = (grunt) ->
       'sass'
       'autoprefixer'
       'ngAnnotate'
+      'copy:dev'
       'connect:livereload'
       'watch'
    ]

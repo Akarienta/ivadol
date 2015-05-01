@@ -38,7 +38,8 @@
          <!--<div id="cd-logo"><a href="#0"><img src="img/cd-logo.svg" alt="Logo"></a></div>-->
          <nav class="main-nav-c" ng-click="vm.showHideMobileMenu()">
             <!-- TODO predelat kvuli animacim -->
-            <ul ng-class="{'is-visible': vm.isMobileMenuVisible}" class="mobile-menu">
+            <span class="menu-icon fa fa-bars" ng-class="{'menu-icon-open': vm.isMobileMenuVisible}"></span>
+            <ul ng-show="vm.isMobileMenuVisible" class="menu">
                <li><a href="">Home</a></li>
                <li><a href="">About</a></li>
                <li><a href="">Pricing</a></li>
