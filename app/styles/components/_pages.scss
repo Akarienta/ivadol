@@ -1,0 +1,53 @@
+// main
+// ***************************
+
+.main-buttons {
+   margin-top: rem-calc(30px);
+
+   button {
+      min-width: rem-calc(160px);
+      margin: 0;
+      width: auto;
+   }
+
+   div {
+      @include span-columns(12);
+
+      &:last-child {
+         margin-top: rem-calc(20px);
+      }
+
+
+      @media #{$medium-up and $landscape} {
+         @include span-columns(6);
+
+         &:first-child {
+            text-align: right;
+         }
+
+         &:last-child {
+            text-align: left;
+            margin-top: 0;
+         }
+      }
+   }
+}
+
+.bg-1 {
+   h2 {
+      @include show-with-delay(0);
+   }
+   h1 {
+      @include show-with-delay(1s);
+   }
+
+   .main-buttons {
+      div:first-child {
+         @include show-with-delay(2s);
+      }
+
+      div:last-child {
+         @include show-with-delay(2.2s);
+      }
+   }
+}

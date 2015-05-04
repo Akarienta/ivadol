@@ -1,0 +1,75 @@
+.main-content-c {
+   height: 100%;
+   position: relative;
+   z-index: index($main-elements, main-content);
+}
+
+.container-c {
+   width: 90%;
+   max-width: $medium-breakpoint;
+   margin: 0 auto;
+   @include clearfix;
+
+   @media #{$large-up} {
+      background-attachment: fixed;
+   }
+}
+
+.fixed-bg {
+   &.bg-1 {
+      background-image: url('../images/bg1.jpg');
+   }
+
+   position: relative;
+   min-height: 100%;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+   z-index: index($bg-elements, fixed-bg);
+
+   div.container-c {
+      position: absolute;
+      @include center;
+      width: 90%;
+      max-width: $large-breakpoint;
+
+      text-align: center;
+      text-shadow: 0 rem-calc(1px) rem-calc(1px) rgba($color-1, 0.3);
+      color: $color-4;
+   }
+
+   @media #{$large-up} {
+      background-attachment: fixed;
+   }
+}
+
+.scrolling-bg {
+   position: relative;
+   min-height: 100%;
+   padding: 4em 0;
+   line-height: 1.6;
+   box-shadow: 0 0 50px rgba(#000, .5);
+   z-index: index($bg-elements, scrolling-bg);
+
+   &.cd-color-1 {
+      background-color: $color-1;
+      color: lighten($color-1, 40%);
+   }
+
+   &.cd-color-2 {
+      background-color: $color-2;
+      color: $color-1;
+   }
+
+   &.cd-color-3 {
+      background-color: $color-3;
+      color: $color-1;
+   }
+
+   @media #{$medium-only} {
+      padding: 8em 0;
+      font-size: rem-calc(20px);
+      line-height: 2;
+      font-weight: 300;
+   }
+}

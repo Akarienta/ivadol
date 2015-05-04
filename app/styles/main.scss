@@ -1,136 +1,15 @@
+// parts
 @import 'reset';
 @import 'bourbon';
 @import 'neat';
-@import 'font-awesome';
 @import 'settings';
 @import 'mixins';
+@import 'functions';
 @import 'layout';
+@import 'z-index';
 
-// GLOBAL
-// ******************************************************************************************************************
-
-html * {
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
-}
-
-*, *:after, *:before {
-   @include box-sizing(border-box);
-}
-
-body {
-   font: {
-      size: 100%;
-      family: $primary-font; // variables inside partials > _variables.scss
-   }
-   color: $secondary-color;
-   background-color: $primary-color;
-}
-
-body, html {
-   height: 100%;
-}
-
-a {
-   color: $highlight-color;
-   text-decoration: none;
-}
-
-// MAIN NAVIGATION
-// ******************************************************************************************************************
-
-.header-c {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: rem-calc($header-size-small);
-   background: rgba($color-4, .8);
-   box-shadow: 0 rem-calc(1px) rem-calc(2px) $color-1;
-   z-index: index(10, navigation);
-   @include clearfix;
-
-   @include media(medium-up) {
-      height: rem-calc($header-size-medium-up);
-   }
-}
-
-.main-nav-c {
-   float: right;
-   margin-right: 5%;
-
-   span.menu-icon {
-      font-size: rem-calc($header-size-small) / 2;
-      display: block;
-      width: rem-calc($header-size-small);
-      line-height: rem-calc($header-size-small);
-      text-align: center;
-      cursor: pointer;
-      transition: 0.5s;
-      &.menu-icon-open {
-         transform: rotate(90deg);
-      }
-
-      @include media(medium-up) {
-         display: none;
-      }
-   }
-
-   ul {
-      position: absolute;
-      // TODO 50px vs rem-calc?
-      top: rem-calc($header-size-small);
-      left: 0;
-      width: 100%;
-   }
-
-   a {
-      display: block;
-      height: rem-calc($header-size-small);
-      line-height: rem-calc($header-size-small);
-      padding-left: 5%;
-      background: darken($color-1, 5%);
-      border-top: rem-calc(1px) solid lighten($color-1, 3%);
-      color: lighten($color-1, 30%);
-
-      &:hover {
-         transition: 1s;
-         color: lighten($color-1, 20%);
-      }
-   }
-
-   @include media(medium-up) {
-      width: auto;
-      height: auto;
-      background: none;
-      cursor: auto;
-
-      ul {
-         position: static;
-         width: auto;
-         line-height: rem-calc($header-size-medium-up);
-
-         &.ng-hide {
-            display: block !important;
-         }
-      }
-
-      li {
-         display: inline-block;
-         margin-left: 1rem;
-      }
-
-      a {
-         display: inline-block;
-         height: auto;
-         line-height: normal;
-         background: transparent;
-         padding: .6rem 1rem;
-         border-top: none;
-         color: $color-1;
-         text-transform: uppercase;
-         font-weight: bold;
-         font-size: rem-calc(14px);
-      }
-   }
-}
+// web components
+@import 'components/global';
+@import 'components/header';
+@import 'components/container';
+@import 'components/pages';

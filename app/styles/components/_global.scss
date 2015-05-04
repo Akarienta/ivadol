@@ -1,0 +1,56 @@
+html * {
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+   @include box-sizing(border-box);
+}
+
+body {
+   font: {
+      size: rem-calc($base-size);
+      family: $primary-font;
+   }
+   color: $color-1;
+   background-color: $color-2;
+}
+
+body, html {
+   height: 100%;
+}
+
+a {
+   color: darken($color-4, 10%);
+   text-decoration: none;
+
+   &:hover {
+      color: $color-4;
+      @include transition-duration($transition-duration);
+   }
+}
+
+h1 {
+   @include headline($h1-small-up, $h1-large-up, 1.4);
+}
+
+h2 {
+   @include headline($h2-small-up, $h2-large-up, 1.2);
+}
+
+button {
+   background: $color-2;
+   border: 2px solid $color-4;
+   color: $color-4;
+   padding: rem-calc(14px);
+   font-size: rem-calc(14px);
+   font-family: $primary-font;
+   border-radius: 3px;
+   cursor: pointer;
+   @include transition-duration($transition-duration);
+}
+
+button:hover {
+   background: transparent;
+   @include transition-duration($transition-duration);
+}

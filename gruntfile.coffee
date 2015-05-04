@@ -36,7 +36,6 @@ module.exports = (grunt) ->
                loadPath: [
                   'bower_components/bourbon/app/assets/stylesheets'
                   'bower_components/neat/app/assets/stylesheets'
-                  'bower_components/font-awsome/scss'
                ]
             files: [
                expand: true
@@ -136,7 +135,7 @@ module.exports = (grunt) ->
                {
                   # fonts
                   expand: true,
-                  cwd: '.tmp/fonts',
+                  cwd: 'bower_components/font-awsome/fonts',
                   src: '**/*.{otf,eot,svg,ttf,woff,woff2}',
                   dest: '<%= config.dist %>/fonts'
                }

@@ -17,8 +17,11 @@
       })
 
       /** @ngInject */
-      .run(function (gettextCatalog, $rootScope) {
-         gettextCatalog.setCurrentLanguage('en_US');
+      .run(function (gettextCatalog, $rootScope, $location) {
+         if ($location.host().split('.').reverse()[0] === 'com') {
+            gettextCatalog.setCurrentLanguage('en_US');
+         }
+
          $rootScope.$on('changeLanguage', function (event, lang) {
             gettextCatalog.setCurrentLanguage(lang);
          });

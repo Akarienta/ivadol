@@ -1,53 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app" ng-controller="MainController as vm" ng-strict-di ng-cloak>
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Test</title>
+      <!--[if lte IE 9]>
+      <title translate>Nepodporovaný prohlížeč :-(</title>
+      <![endif]-->
+      <!--[if !IE ]> -->
+      <title>{{vm.webTitle}}</title>
+      <!-- <![endif]-->
+
       <!-- build:css(.tmp) css/style.min.css -->
       <link rel="stylesheet" href="styles/main.css">
       <!-- endbuild -->
+
+      <!-- build:css(.) css/vendor.min.css -->
+      <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/font-awsome/css/font-awesome.css"/>
+      <!-- endbower -->
+      <!-- endbuild -->
+
       <!-- favicon start -->
-      <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png">
-      <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png">
-      <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png">
-      <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png">
-      <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png">
-      <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png">
-      <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png">
-      <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png">
-      <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png">
-      <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32">
-      <link rel="icon" type="image/png" href="/favicon/favicon-194x194.png" sizes="194x194">
-      <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
-      <link rel="icon" type="image/png" href="/favicon/android-chrome-192x192.png" sizes="192x192">
-      <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16">
-      <link rel="manifest" href="/favicon/manifest.json">
-      <link rel="shortcut icon" href="/favicon/favicon.ico">
-      <meta name="msapplication-TileColor" content="#ffffff">
-      <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
-      <meta name="msapplication-config" content="/favicon/browserconfig.xml">
-      <meta name="theme-color" content="#ffffff">
+      <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png?v=2">
+      <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png?v=2">
+      <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png?v=2">
+      <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png?v=2">
+      <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png?v=2">
+      <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png?v=2">
+      <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png?v=2">
+      <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png?v=2">
+      <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png?v=2">
+      <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png?v=2" sizes="32x32">
+      <link rel="icon" type="image/png" href="/favicon/favicon-194x194.png?v=2" sizes="194x194">
+      <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png?v=2" sizes="96x96">
+      <link rel="icon" type="image/png" href="/favicon/android-chrome-192x192.png?v=2" sizes="192x192">
+      <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png?v=2" sizes="16x16">
+      <link rel="manifest" href="/favicon/manifest.json?v=2">
+      <link rel="shortcut icon" href="/favicon/favicon.ico?v=2">
+      <meta name="msapplication-TileColor" content="#6093ac">
+      <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png?v=2">
+      <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=2">
+      <meta name="theme-color" content="#eff4f7">
       <!-- favicon end -->
    </head>
 
-   <body ng-app="app" ng-controller="MainController as vm" ng-strict-di>
+   <body>
+      <!-- TODO: hlaska pro nepodporu IE 8 -->
+      <!-- FIXME: animace v IE 9 -->
+      <!-- FIXME: zobrazeni v mobilnim landscapu -->
 
+      <!--[if lte IE 9]>
+      <main class="main-content-c">
+         <div class="scrolling-bg">
+            <div class="container-c">
+               <h2 translate>Nepodporovaný prohlížeč :-(</h2>
+               <p translate>Používaním zastaralého prohlížeče vystavujete svůj počítač nebezpečí. <a href="http://browsehappy.com">Browse Happy</a> je jedním ze způsobů, jak získat nejnovšjší verzi některého z nejpoužívanějších moderních prohlížečů. Také tam můžete nalézt informace o prohlížeči, který by nejspíše vyhovoval Vaším potřebám lépe, než prohlížeč, který používáte nyní.</p>
+            </div>
+         </div>
+      </main>
+      <![endif]-->
+
+      <!--[if !IE ]> -->
       <header class="header-c">
-         <!-- TODO: logo -->
-         <!--<div id="cd-logo"><a href="#0"><img src="img/cd-logo.svg" alt="Logo"></a></div>-->
+         <div id="logo-c">
+            <span>{{vm.webName}}</span>
+            <object type="image/svg+xml" data="images/logo.svg"></object>
+         </div>
          <nav class="main-nav-c" ng-click="vm.showHideMobileMenu()">
-            <!-- TODO predelat kvuli animacim -->
             <span class="menu-icon fa fa-bars" ng-class="{'menu-icon-open': vm.isMobileMenuVisible}"></span>
             <ul ng-show="vm.isMobileMenuVisible" class="menu">
-               <li><a href="">Home</a></li>
-               <li><a href="">About</a></li>
-               <li><a href="">Pricing</a></li>
-               <li><a href="">Gallery</a></li>
-               <li><a href="">Contact</a></li>
+               <li><a href="" translate>Domů</a></li>
+               <li><a href="" translate>O mně</a></li>
+               <li><a href="" translate>Reference</a></li>
+               <li><a href="" translate>Nabídka</a></li>
+               <li><a href="" translate>Kontakt</a></li>
             </ul>
          </nav>
       </header>
+
+      <main class="main-content-c">
+         <div class="fixed-bg bg-1">
+            <div class="container-c">
+               <h2 translate>Ahoj! Jmenuji se Ivana Doležalová.</h2>
+               <h1 translate>Jak Vám mohu pomoci?</h1>
+               <div class="main-buttons">
+                  <div><button translate>Chci web</button></div>
+                  <div><button translate>Chci freelancera</button></div>
+               </div>
+            </div>
+         </div>
+      </main>
+      <!-- <![endif]-->
 
       <!-- build:js(.) js/vendor.min.js -->
       <!-- bower:js -->
