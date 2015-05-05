@@ -9,16 +9,73 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.7.5\n"
 
-#: app/index.html:14
-msgid "Jak se jmenujete?"
-msgstr "What is your name?"
+#: app/index.html:86
+msgid "Ahoj! Jmenuji se Ivana Doležalová."
+msgstr "Hello! My name is Ivana Dolezalova."
 
-#: .tmp/scripts/mainController.js:7
-msgid "Na něco se tě zeptám..."
-msgstr "I will ask you for something..."
+#. webpage title
+#: .tmp/scripts/mainController.js:45
+msgid "CHCI WEB - profesionální web rychle a levně"
+msgstr ""
 
-#: app/index.html:12
-msgid "Vítejte v mé aplikaci!"
-msgstr "Welcome to my app!"
+#: app/index.html:90
+msgid "Chci freelancera"
+msgstr "Hire freelancer"
+
+#. webpage name (next to the logo)
+#: .tmp/scripts/mainController.js:47 app/index.html:89
+msgid "Chci web"
+msgstr "I need a web"
+
+#: app/index.html:68
+msgid "Domů"
+msgstr "Home"
+
+#. webpage name (next to the logo)
+#: .tmp/scripts/mainController.js:42
+msgid "FL Ivana"
+msgstr "FL Ivana"
+
+#. webpage title
+#: .tmp/scripts/mainController.js:40
+msgid "Freelancer Ivana - vizitka"
+msgstr ""
+
+#: app/index.html:87
+msgid "Jak Vám mohu pomoci?"
+msgstr "How can I help you?"
+
+#: app/index.html:72
+msgid "Kontakt"
+msgstr "Contact"
+
+#: app/index.html:71
+msgid "Nabídka"
+msgstr ""
+
+#: app/index.html:69
+msgid "O mně"
+msgstr "About me"
+
+#: app/index.html:70
+msgid "Reference"
+msgstr ""
+
+#: app/index.html:74
+msgid "Změnit jazyk: angličtina (USA)"
+msgstr "Change language: English (USA)"
+
+#: app/index.html:77
+msgid "Změnit jazyk: čeština"
+msgstr "Change language: Czech"
+
+#~ msgid "Jak se jmenujete?"
+#~ msgstr "What is your name?"
+
+#~ msgid "Na něco se tě zeptám..."
+#~ msgstr "I will ask you for something..."
+
+#~ msgid "Vítejte v mé aplikaci!"
+#~ msgstr "Welcome to my app!"

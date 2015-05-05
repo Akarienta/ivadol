@@ -26,7 +26,7 @@
          @include logo-c-margin-top($header-size-medium-up);
       }
 
-      object {
+      img {
          @mixin logo-height($logo-size) {
             height: rem-calc($logo-size) - rem-calc($logo-size/3);
          }
@@ -127,6 +127,10 @@
       li {
          display: inline-block;
          margin-left: 0.2rem;
+
+         &.change-lang {
+            display: none;
+         }
       }
 
       a {

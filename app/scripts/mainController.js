@@ -12,15 +12,19 @@
       vm.isMobileMenuVisible = false;
 
       vm.changeLanguage = changeLanguage;
+      vm.isCzechLang = true;
       vm.showHideMobileMenu = showHideMobileMenu;
       vm.webTitle = '';
       vm.webName = '';
+      vm.isProgressVisible = [false, false, false, false, false, false];
+      vm.startProgress = startProgress;
 
       resolveNames();
 
       ////////////
 
       function changeLanguage(lang) {
+         vm.isCzechLang = lang === 'cs_CZ';
          return $rootScope.$emit('changeLanguage', lang);
       }
 
@@ -40,6 +44,12 @@
             vm.webTitle = gettextCatalog.getString('CHCI WEB - profesionální web rychle a levně');
             /// webpage name (next to the logo)
             vm.webName = gettextCatalog.getString('Chci web');
+         }
+      }
+
+      function startProgress(index) {
+         if (!vm.isProgressVisible[index]) {
+            vm.isProgressVisible[index] = true;
          }
       }
    }

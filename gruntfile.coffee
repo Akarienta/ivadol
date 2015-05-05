@@ -221,7 +221,6 @@ module.exports = (grunt) ->
    ]
 
    grunt.registerTask 'genpot', [
-      'coffee'
       'nggettext_extract'
    ]
 

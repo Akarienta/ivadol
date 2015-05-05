@@ -1,8 +1,8 @@
 // parts
 @import 'reset';
+@import 'settings';
 @import 'bourbon';
 @import 'neat';
-@import 'settings';
 @import 'mixins';
 @import 'functions';
 @import 'layout';
@@ -13,3 +13,4 @@
 @import 'components/header';
 @import 'components/container';
 @import 'components/pages';
+@import 'components/progress';

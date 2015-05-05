@@ -9,6 +9,7 @@
    max-width: $medium-breakpoint;
    margin: 0 auto;
    @include clearfix;
+   @include outer-container;
 
    @media #{$large-up} {
       background-attachment: fixed;
@@ -36,6 +37,12 @@
       text-align: center;
       text-shadow: 0 rem-calc(1px) rem-calc(1px) rgba($color-1, 0.3);
       color: $color-4;
+
+      h2 {
+         @media #{$small-only-landscape} {
+            display: none;
+         }
+      }
    }
 
    @media #{$large-up} {
@@ -45,31 +52,25 @@
 
 .scrolling-bg {
    position: relative;
-   min-height: 100%;
-   padding: 4em 0;
-   line-height: 1.6;
-   box-shadow: 0 0 50px rgba(#000, .5);
+   padding: rem-calc(20px + $header-size-small 0);
    z-index: index($bg-elements, scrolling-bg);
 
-   &.cd-color-1 {
+   &.color-1 {
       background-color: $color-1;
       color: lighten($color-1, 40%);
    }
 
-   &.cd-color-2 {
+   &.color-2 {
       background-color: $color-2;
-      color: $color-1;
+      color: lighten($color-2, 40%);
    }
 
-   &.cd-color-3 {
-      background-color: $color-3;
-      color: $color-1;
+   &.color-4 {
+      background-color: darken($color-4, 10%);
+      color: darken($color-4, 50%);
    }
 
    @media #{$medium-only} {
-      padding: 8em 0;
-      font-size: rem-calc(20px);
-      line-height: 2;
-      font-weight: 300;
+      padding: rem-calc(40px + $header-size-medium-up 0);
    }
 }
