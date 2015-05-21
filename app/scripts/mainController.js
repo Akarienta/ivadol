@@ -18,6 +18,7 @@
       vm.webName = '';
       vm.isProgressVisible = [false, false, false, false, false, false];
       vm.startProgress = startProgress;
+      vm.getPortfolioText = getPortfolioText;
 
       resolveNames();
 
@@ -50,6 +51,14 @@
       function startProgress(index) {
          if (!vm.isProgressVisible[index]) {
             vm.isProgressVisible[index] = true;
+         }
+      }
+
+      function getPortfolioText() {
+         if (Modernizr.touch){
+            return gettextCatalog.getString('Klikněte pro detail.');
+         } else {
+            return gettextCatalog.getString('Najeďte myší pro detail.');
          }
       }
    }

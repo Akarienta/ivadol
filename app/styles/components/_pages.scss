@@ -17,7 +17,6 @@
          margin-top: rem-calc(20px);
       }
 
-
       @media #{$medium-up and $landscape} {
          @include span-columns(6);
 
@@ -100,5 +99,135 @@
 
    @media #{$large-up} {
       @include flags(60px);
+   }
+}
+
+// progress
+// ***************************
+
+.progress-c {
+   margin: rem-calc(180px 0 40px 0);
+   position: relative;
+
+   &:first-child {
+      margin-top: rem-calc(20px);
+   }
+
+   @media #{$medium-only} {
+      @include span-columns(4);
+      @include omega(3n);
+      margin-top: rem-calc(140px);
+
+      &:first-child, &:nth-child(2), &:nth-child(3) {
+         margin-top: rem-calc(10px);
+      }
+   }
+
+   @media #{$large-up} {
+      margin-top: rem-calc(20px);
+      @include span-columns(2);
+   }
+
+   .progress-value {
+      position: relative;
+      text-align: center;
+      top: rem-calc(90px);
+   }
+
+   img {
+      position: absolute;
+      // FIXME - proporce v IE
+      max-height: rem-calc(70px);
+      max-width: rem-calc(70px);
+      @include center;
+   }
+
+   .progress-bar {
+      position: absolute;
+      @include center;
+   }
+}
+
+// references
+// ***************************
+
+.projects-c {
+   @include outer-container();
+   margin-top: rem-calc(10px)
+}
+
+.project-c {
+
+   @for $i from 1 to 9 {
+      &.p#{$i}:before {
+         background-image: url("../images/p#{$i}.jpg");
+      }
+   }
+
+   &:before {
+      content: "";
+      display: block;
+      padding-top: 71.6253444%;
+      // background-image: url("http://placehold.it/726x520");
+      background-size: contain;
+   }
+
+   position: relative;
+   cursor: pointer;
+
+   @media #{$medium-only} {
+      @include span-columns(6);
+      @include omega();
+      width: 50%; // bourbon hack
+   }
+
+   @media #{$large-up} {
+      @include span-columns(4);
+      @include omega();
+      width: 33.3333%; // bourbon hack
+   }
+
+   .project-text-c {
+      @include transition-duration($transition-duration);
+      text-align: center;
+      background-color: rgba($color-3, 0.9);
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      h1, h2, p {
+         color: $color-1;
+      }
+
+      h1 {
+         font-size: rem-calc(25px);
+         line-height: 1;
+      }
+
+      h2 {
+         font-size: rem-calc(20px);
+         line-height: 1;
+      }
+
+      a {
+         margin-top: rem-calc(20px);
+      }
+
+      .project-text {
+         position: absolute;
+         width: 100%;
+         padding: 0 rem-calc(20px);
+         @include center;
+      }
+   }
+
+   &:hover {
+      .project-text-c {
+         @include transition-duration($transition-duration);
+         opacity: 1;
+      }
    }
 }

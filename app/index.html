@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app" ng-controller="MainController as vm" ng-strict-di ng-cloak>
+<html lang="en" ng-app="app" ng-controller="MainController as vm" ng-strict-di>
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -114,32 +114,32 @@
 
          <div class="scrolling-bg color-4">
             <div class="container-c">
-               <div class="progress-wrapper">
+               <div class="progress-c">
                   <img src="images/html.svg" in-view="$inview && vm.startProgress(0)" in-view-options="{debounce: 60}" />
                   <div class="progress-bar" round-progress current="vm.isProgressVisible[0] ? 100 : 0" color="#e44d26"></div>
                   <div class="progress-value">HTML</div>
                </div>
-               <div class="progress-wrapper">
+               <div class="progress-c">
                   <img src="images/foundation.svg" in-view="$inview && vm.startProgress(1)" in-view-options="{debounce: 60}" />
                   <div class="progress-bar" round-progress current="vm.isProgressVisible[1] ? 80 : 0" color="#028cb9"></div>
                   <div class="progress-value">Foundation</div>
                </div>
-               <div class="progress-wrapper">
+               <div class="progress-c">
                   <img src="images/javascript.svg" in-view="$inview && vm.startProgress(2)" in-view-options="{debounce: 60}" />
                   <div class="progress-bar" round-progress current="vm.isProgressVisible[2] ? 55 : 0" color="#e6a626"></div>
                   <div class="progress-value">JavaScript</div>
                </div>
-               <div class="progress-wrapper">
+               <div class="progress-c">
                   <img src="images/angular.svg" in-view="$inview && vm.startProgress(3)" in-view-options="{debounce: 60}" />
                   <div class="progress-bar" round-progress current="vm.isProgressVisible[3] ? 65 : 0" color="#dd1b16"></div>
                   <div class="progress-value">AngularJS</div>
                </div>
-               <div class="progress-wrapper">
+               <div class="progress-c">
                   <img src="images/css.svg" in-view="$inview && vm.startProgress(4)" in-view-options="{debounce: 60}" />
                   <div class="progress-bar" round-progress current="vm.isProgressVisible[4] ? 90 : 0" color="#1572b6"></div>
                   <div class="progress-value">CSS</div>
                </div>
-               <div class="progress-wrapper">
+               <div class="progress-c">
                   <img src="images/sass.svg" in-view="$inview && vm.startProgress(5)" in-view-options="{debounce: 60}" />
                   <div class="progress-bar" round-progress current="vm.isProgressVisible[5] ? 75 : 0" color="#cf649a"></div>
                   <div class="progress-value">SASS</div>
@@ -155,12 +155,135 @@
             </div>
          </div>
 
+         <div class="fixed-bg bg-2">
+            <div class="container-c">
+               <h2 translate>Až 90 % mých klientů si myslí, že někdy v minulosti zaplatili za tvorbu webu neadekvátní částku a přitom nebyli spokojení s výsledkem.</h2>
+               <h1 translate>Změňme to. Společně.</h1>
+               <!--<ul>
+                  <li>Můžeme si nejprve sednout a nezávazně si popovídat. Rozhodnete se sami.</li>
+                  <li>Zakládám si na lidském přístupu ke klientovi, vždy chci, aby přesně věděl, co dělám a proč to dělám zrovna takto.</li>
+                  <li>Používám při práci prototypování, takže výslednou podobu webu uvidíte předem.</li>
+                  <li>Jsem časově flexibilní a mohu přijet kamkoliv za Vámi.</li>
+                  <li>Až 90 % mých klientů se na mne při potřebě tvorby dalšího webu obrátilo znovu.</li>
+                  <li>Jsem profesionál a tvorba webů mne živí. Není to koníček ani přivýdělek.</li>
+                  <li>Neustále se vzdělávám a k realizaci projektů tak vždy využívám moderní technologie i postupy.</li>
+                  <li>Jsem schopná zajistit profesionální překlad Vašeho webu do mnoha jazyků.</li>
+               </ul>-->
+            </div>
+         </div>
+
          <div class="scrolling-bg color-2">
+            <div class="container-c">
+               <h2 translate>Realizované projekty</h2>
+               <p translate>Zde si můžete prohlédnout mou práci. Nejedná se o kompletní portfolio, řada mých - především starších - projektů již byla archivována.</p>
+               <p>{{vm.getPortfolioText()}}</p>
+               <div class="projects-c">
+
+                  <div class="project-c p1">
+                     <div class="project-text-c">
+                        <div class="project-text">
+                           <h1>Koliba Opava</h1>
+                           <h2 translate>duben 2015</h2>
+                           <h3 translate>návrh, realizace</h3>
+                           <a class="button" href="http://koliba-opava.cz" target="_blank" translate>Přejít na web</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="project-c p2">
+                     <div class="project-text-c">
+                        <div class="project-text">
+                           <h1>S chutí do práce</h1>
+                           <h2 translate>leden 2015</h2>
+                           <h3 translate>návrh, design, realizace</h3>
+                           <a class="button" href="http://schutidoprace.cz" target="_blank" translate>Přejít na web</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="project-c p3">
+                     <div class="project-text-c">
+                        <div class="project-text">
+                           <h1>Všem ženám</h1>
+                           <h2 translate>listopad 2014</h2>
+                           <h3 translate>návrh, realizace</h3>
+                           <a class="button" href="http://vsemzenam.cz" target="_blank" translate>Přejít na web</a>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="project-c p4">
+                     <div class="project-text-c">
+                        <div class="project-text">
+                           <h1>ASSIST</h1>
+                           <h2 translate>březen 2013</h2>
+                           <h3 translate>front-end</h3>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="project-c p5">
+                     <div class="project-text-c">
+                        <div class="project-text">
+                           <h1>Alisen</h1>
+                           <h2 translate>listopad 2012</h2>
+                           <h3 translate>front-end</h3>
+                           <a class="button" href="http://alisen.cz" target="_blank" translate>Přejít na web</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="project-c p6">
+                     <div class="project-text-c">
+                        <div class="project-text">
+                           <h1>R. B. Chandeliers</h1>
+                           <h2 translate>jaro 2010</h2>
+                           <h3 translate>kompletní web</h3>
+                           <a class="button" href="http://rb-lustry.cz" target="_blank" translate>Přejít na web</a>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="project-c p7">
+                     <div class="project-text-c">
+                        <div class="project-text">
+                           <h1>Skaut Velká Polom</h1>
+                           <h2 translate>podzim 2007</h2>
+                           <h3 translate>návrh, design, realizace</h3>
+                           <a class="button" href="http://skaut-velkapolom.net" target="_blank" translate>Přejít na web</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="project-c p8">
+                     <div class="project-text-c">
+                        <div class="project-text">
+                           <h1>GEO-MP</h1>
+                           <h2 translate>léto 2005</h2>
+                           <h3 translate>reevize front-endu</h3>
+                           <a class="button" href="http://www.geomp.cz" target="_blank" translate>Přejít na web</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="fixed-bg bg-3">
+            <div class="container-c">
+               <h2 translate>Šetřete svůj čas, peníze i nervy. Přestaňte bojovat s větrnými mlýny a obraťte se na profesionála, protože i tvorba webu může probíhat efektivně a k Vaší spokojenosti.</h2>
+               <h1 translate>Vím, jak na to. Pomohu Vám.</h1>
+            </div>
+         </div>
+
+         <!--<div class="scrolling-bg color-2">
             <div class="container-c">
                <h2 translate>Jak to dělám</h2>
                <p translate>Ke své práci používám moderní webové technologie, vedle HTML 5, CSS 3 (preferuji preprocesor <a href="http://sass-lang.com">SASS</a>), jQuery a čistého JavaScriptu používám řadu frameworků, z nichž za zmínku stojí především <a href="http://foundation.zurb.com">ZURB Foundation</a> a <a href="https://angularjs.org">AngularJS</a>.</p>
                <p translate>Když už vyvíjím back-end, tak v Javě nebo v Pythonu, s čímž souvisí i znalost front-end frameworků <a href="https://struts.apache.org">Apache Struts</a> resp. <a href="https://www.djangoproject.com">Django</a>. V současné době se však snažím propagovat spíše <a href="http://nobackend.org">noback-end</a> technologie v popředí s <a href="https://www.firebase.com">Firebase</a>.</p>
                <p translate>Znám dobře redakční systémy <a href="http://wordpress.org">WordPress</a> a <a href="http://www.joomla.org">Joomla!</a>, z wiki systémů pak <a href="https://moinmo.in">MoinMoin</a>.</p>
+            </div>
+         </div>-->
+
+         <div class="fixed-bg bg-4">
+            <div class="container-c">
+               <h2 translate>I vy můžete mít kvalitní web za rozumnou cenu. Třeba za dva týdny.</h2>
+               <h1 translate>Kontaktujte mne. Zařídím to.</h1>
             </div>
          </div>
 
@@ -169,6 +292,7 @@
 
       <!-- build:js(.) js/vendor.min.js -->
       <!-- bower:js -->
+      <script src="bower_components/modernizr/modernizr.js"></script>
       <script src="bower_components/jquery/dist/jquery.js"></script>
       <script src="bower_components/angular/angular.js"></script>
       <script src="bower_components/angular-route/angular-route.js"></script>

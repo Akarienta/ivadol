@@ -37,10 +37,10 @@ h1 {
 }
 
 h2 {
-   @include headline($h2-small-up, $h2-large-up, 1.2);
+   @include headline($h2-small-up, $h2-large-up, 1.4);
 }
 
-button {
+button, .button {
    background: $color-2;
    border: 2px solid $color-4;
    color: $color-4;
@@ -49,10 +49,11 @@ button {
    font-family: $primary-font;
    border-radius: 3px;
    cursor: pointer;
+   display: inline-block;
    @include transition-duration($transition-duration);
-}
 
-button:hover {
-   background: transparent;
-   @include transition-duration($transition-duration);
+   &:hover {
+      background: transparent;
+      @include transition-duration($transition-duration);
+   }
 }
