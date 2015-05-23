@@ -22,12 +22,10 @@ body, html {
 }
 
 a {
-   color: darken($color-4, 10%);
    text-decoration: none;
    @include transition-duration($transition-duration);
 
    &:hover {
-      color: $color-4;
       @include transition-duration($transition-duration);
    }
 }
@@ -40,6 +38,24 @@ h2 {
    @include headline($h2-small-up, $h2-large-up, 1.4);
 }
 
+h3 {
+   @include headline($h3-small-up, $h3-large-up, 1.4);
+   margin: 0;
+}
+
+small {
+   font-size: 70%;
+}
+
+.large {
+   font-size: 110%;
+
+   @media #{$medium-up} {
+      font-size: 130%;
+   }
+}
+
+
 button, .button {
    background: $color-2;
    border: 2px solid $color-4;
@@ -50,6 +66,7 @@ button, .button {
    border-radius: 3px;
    cursor: pointer;
    display: inline-block;
+   min-width: rem-calc(120px);
    @include transition-duration($transition-duration);
 
    &:hover {

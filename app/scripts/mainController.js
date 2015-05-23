@@ -6,7 +6,7 @@
       .controller('MainController', MainController);
 
    /** @ngInject */
-   function MainController(gettextCatalog, $rootScope, $location) {
+   function MainController(gettextCatalog, $rootScope, $location, $timeout) {
       var vm = this;
 
       vm.isMobileMenuVisible = false;
@@ -19,6 +19,10 @@
       vm.isProgressVisible = [false, false, false, false, false, false];
       vm.startProgress = startProgress;
       vm.getPortfolioText = getPortfolioText;
+      vm.references = getReferences();
+      vm.activeReference = 0;
+      vm.referenceChange = true;
+      vm.changeReference = changeReference;
 
       resolveNames();
 
@@ -60,6 +64,34 @@
          } else {
             return gettextCatalog.getString('Najeďte myší pro detail.');
          }
+      }
+
+      function getReferences() {
+         var refs = [];
+         refs.push({
+            text: gettextCatalog.getString('V oblasti tvorby internetových stránek jsem úplný laik, a tak jsem musela sehnat profesionála v tomto oboru. Měla jsem velké štěstí v podobě Ivy Doležalové, která je podle mne v oboru jednička. Stránky vytvořila dle mé potřeby a spokojenosti. Její rady a poznatky byly vždy věcné a velmi užitečné. Pokud hledáte profesionalitu, kvalitu a osobní přístup, služby Ivy Doležalové mohu jen doporučit.'),
+            author: gettextCatalog.getString('Pavla, zadavatelka webu Koliba Opava')
+         });
+         refs.push({
+            text: gettextCatalog.getString('Spolupráce s Ivanou byla příjemná a bezproblémová. Její práce byla vysoce profesionální, ve všem nám vyšla vstříc. Rozhodně doporučuji.'),
+            author: gettextCatalog.getString('Katka, zadavatelka webu Všem ženám')
+         });
+         // TODO - doplnit recenze - Lenka, Terka
+         return refs;
+      }
+
+      function changeReference(next) {
+         var nextRef;
+         if (next) {
+            nextRef = (vm.activeReference === vm.references.length-1) ? 0 : vm.activeReference+1;
+         } else {
+            nextRef = (vm.activeReference === 0) ? vm.references.length-1 : vm.activeReference-1;
+         }
+         $timeout(function() {
+            vm.referenceChange = true;
+            vm.activeReference = nextRef;
+         }, 500);
+         vm.referenceChange = false;
       }
    }
 

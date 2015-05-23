@@ -158,7 +158,7 @@
 
 .project-c {
 
-   @for $i from 1 to 9 {
+   @for $i from 1 to 10 {
       &.p#{$i}:before {
          background-image: url("../images/p#{$i}.jpg");
       }
@@ -212,6 +212,10 @@
          line-height: 1;
       }
 
+      h2 + p {
+         color: $color-4;
+      }
+
       a {
          margin-top: rem-calc(20px);
       }
@@ -228,6 +232,104 @@
       .project-text-c {
          @include transition-duration($transition-duration);
          opacity: 1;
+      }
+   }
+}
+
+.quote-wrapper {
+   background-color: lighten($color-1, 50%);
+   margin-top: rem-calc(20px);
+}
+
+.quote-wrapper, .quote-c {
+   box-shadow: inset 0 0 rem-calc(5px) rem-calc(2px) $color-1;
+}
+
+.quote-c {
+   @include transition-duration($transition-duration);
+   color: $color-1;
+   padding: rem-calc(50px) rem-calc(20px) rem-calc(20px) rem-calc(20px);
+
+   @media #{$large-up} {
+      padding-top: rem-calc(60px);
+   }
+
+   &.change-start {
+      opacity: 0;
+      background: none;
+   }
+
+   &.change-end {
+      opacity: 1;
+      background: $color-4 url("../images/quote.png") rem-calc(10px) rem-calc(10px) no-repeat;
+      background-size: rem-calc(30px);
+
+      @media #{$large-up} {
+         background-size: rem-calc(40px);
+      }
+   }
+}
+
+.text {
+   font-style: italic;
+}
+
+.author {
+   margin-top: rem-calc(10px);
+   color: $color-2;
+}
+
+.arrows {
+   text-align: center;
+   padding-top: rem-calc(20px);
+
+   div {
+      display: inline-block;
+      
+      &:first-child {
+         margin-right: rem-calc(20px);
+      }
+   }
+}
+
+// deals
+// ***************************
+
+.deal {
+   .large {
+      margin: rem-calc(20px) 0 rem-calc(10px) 0;
+   }
+
+   .order {
+      margin: rem-calc(20px) 0;
+   }
+}
+
+.color-1 .deal {
+   .large {
+      color: $color-4;
+   }
+
+   h3 small {
+      color: lighten($color-1, 50%);
+   }
+}
+
+.color-2 .deal {
+   .large {
+      color: lighten($color-1, 70%);
+   }
+
+   h3 small {
+      color: lighten($color-2, 35%);
+   }
+
+   button, .button {
+      background: lighten($color-1, 10%);
+
+      &:hover {
+         // FIXME - proc se to nededi?
+         background: transparent;
       }
    }
 }
