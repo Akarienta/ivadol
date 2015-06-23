@@ -6,7 +6,7 @@
       .controller('MainController', MainController);
 
    /** @ngInject */
-   function MainController(gettextCatalog, $rootScope, $location, $timeout, $scope, $anchorScroll) {
+   function MainController(gettextCatalog, $rootScope, $location, $timeout, $scope) {
       var vm = this;
 
       vm.isMobileMenuVisible = false;
@@ -128,11 +128,6 @@
          }
 
          resetForm();
-      }
-
-      function scrollTo(id) {
-         $location.hash(id);
-         $anchorScroll();
       }
 
    }

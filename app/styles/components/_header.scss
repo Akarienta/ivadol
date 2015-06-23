@@ -94,7 +94,6 @@
 
    a {
       display: block;
-      height: rem-calc($header-size-small);
       line-height: rem-calc($header-size-small);
       padding-left: $header-side-margin;
       background: darken($color-1, 5%);
@@ -109,15 +108,10 @@
    }
 
    @media #{$medium-up} {
-      width: auto;
-      height: auto;
-      background: none;
-      cursor: auto;
-
       ul {
          position: static;
          width: auto;
-         line-height: rem-calc($header-size-medium-up);
+         font-size: 0;
 
          &.ng-hide {
             display: block !important;
@@ -126,7 +120,7 @@
 
       li {
          display: inline-block;
-         margin-left: 0.2rem;
+         margin-left: 0rem;
 
          &.change-lang {
             display: none;
@@ -135,18 +129,21 @@
 
       a {
          display: inline-block;
-         height: auto;
-         line-height: normal;
+         line-height: rem-calc($header-size-medium-up);
          background: transparent;
-         padding: 0.5rem 1rem;
-         border-top: none;
+         padding: 0 1rem;
+         border-top: 0;
          color: $color-1;
          text-transform: uppercase;
          font-weight: bold;
 
-         &:hover {
-            background: transparent;
-            color: lighten($color-1, 30%);
+         &.active, &:hover {
+            background: lighten($color-2, 10%);
+            color: $color-4;
+         }
+
+         &.active:hover {
+            text-decoration: underline;
          }
       }
    }

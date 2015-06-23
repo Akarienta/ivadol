@@ -7,7 +7,8 @@
          'ngAnimate',
          'gettext',
          'angular-svg-round-progress',
-         'angular-inview'
+         'angular-inview',
+         'duScroll'
       ])
 
       /** @ngInject */
