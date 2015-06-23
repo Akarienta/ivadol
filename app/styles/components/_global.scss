@@ -63,7 +63,7 @@ button, .button {
    padding: rem-calc(14px);
    font-size: rem-calc(14px);
    font-family: $primary-font;
-   border-radius: 3px;
+   border-radius: rem-calc(3px);
    cursor: pointer;
    display: inline-block;
    min-width: rem-calc(120px);
@@ -72,5 +72,12 @@ button, .button {
    &:hover {
       background: transparent;
       @include transition-duration($transition-duration);
+   }
+
+   &[disabled] {
+      background: rgba($color-2, 0.4);
+      color: rgba($color-4, 0.6);
+      border-color: rgba($color-4, 0.6);
+      cursor: default;
    }
 }

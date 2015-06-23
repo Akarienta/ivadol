@@ -6,7 +6,7 @@
       .controller('MainController', MainController);
 
    /** @ngInject */
-   function MainController(gettextCatalog, $rootScope, $location, $timeout) {
+   function MainController(gettextCatalog, $rootScope, $location, $timeout, $scope, $anchorScroll) {
       var vm = this;
 
       vm.isMobileMenuVisible = false;
@@ -23,6 +23,14 @@
       vm.activeReference = 0;
       vm.referenceChange = true;
       vm.changeReference = changeReference;
+      vm.resetForm = resetForm;
+      vm.submitForm = submitForm;
+      vm.name = '';
+      vm.email = '';
+      vm.phone = '';
+      vm.subject = '';
+      vm.msg = '';
+      vm.scrollTo = scrollTo;
 
       resolveNames();
 
@@ -59,7 +67,7 @@
       }
 
       function getPortfolioText() {
-         if (Modernizr.touch){
+         if (Modernizr.touch) {
             return gettextCatalog.getString('Klikněte pro detail.');
          } else {
             return gettextCatalog.getString('Najeďte myší pro detail.');
@@ -83,16 +91,50 @@
       function changeReference(next) {
          var nextRef;
          if (next) {
-            nextRef = (vm.activeReference === vm.references.length-1) ? 0 : vm.activeReference+1;
+            nextRef = (vm.activeReference === vm.references.length - 1) ? 0 : vm.activeReference + 1;
          } else {
-            nextRef = (vm.activeReference === 0) ? vm.references.length-1 : vm.activeReference-1;
+            nextRef = (vm.activeReference === 0) ? vm.references.length - 1 : vm.activeReference - 1;
          }
-         $timeout(function() {
+         $timeout(function () {
             vm.referenceChange = true;
             vm.activeReference = nextRef;
          }, 500);
          vm.referenceChange = false;
       }
+
+      function resetForm() {
+         vm.name = '';
+         vm.email = '';
+         vm.phone = '';
+         vm.subject = '';
+         vm.msg = '';
+         $scope.contactForm.$setPristine();
+      }
+
+      function submitForm() {
+         $scope.contactForm.name.$setDirty();
+         $scope.contactForm.email.$setDirty();
+         $scope.contactForm.msg.$setDirty();
+
+         if ($scope.contactForm.$invalid) {
+            return;
+         } else {
+            alert('Odeslano!\n\n' +
+               'Jmeno: ' + vm.name +
+               '\nE-mail: ' + vm.email +
+               '\nTelefon: ' + vm.phone +
+               '\nPredmet: ' + vm.subject +
+               '\nZprava: ' + vm.msg + '');
+         }
+
+         resetForm();
+      }
+
+      function scrollTo(id) {
+         $location.hash(id);
+         $anchorScroll();
+      }
+
    }
 
 })();

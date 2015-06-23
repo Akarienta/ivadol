@@ -14,7 +14,6 @@
       .config(function ($routeProvider) {
          $routeProvider.otherwise({
             templateUrl: 'index.html'
-
          });
       })
 

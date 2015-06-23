@@ -102,6 +102,67 @@
    }
 }
 
+// about
+// ***************************
+
+.links {
+   margin-top: rem-calc(20px);
+   text-align: center;
+
+   div {
+      display: inline-block;
+
+      @media #{$medium-up} {
+         & + div {
+            margin-left: rem-calc(20px);
+         }
+      }
+
+      &:first-child {
+         margin-right: rem-calc(20px);
+
+         @media #{$medium-up} {
+            margin-right: 0;
+         }
+      }
+
+      &:last-child {
+         display: block;
+         clear: both;
+         margin-top: rem-calc(10px);
+
+         @media #{$medium-up} {
+            display: inline-block;
+            clear: none;
+            margin-top: 0;
+         }
+      }
+   }
+
+   .so, .gh {
+      padding-left: rem-calc(30px);
+      background-size: rem-calc(23px);
+      background-repeat: no-repeat;
+      background-position: 0 rem-calc(3px);
+   }
+
+   .so {
+      background-image: url("../images/so.png");
+   }
+
+   .gh {
+      background-image: url("../images/gh.png");
+   }
+
+   a {
+      color: lighten($color-1, 70%);
+
+      &:hover {
+         color: lighten($color-2, 35%);
+      }
+   }
+}
+
 // progress
 // ***************************
 
@@ -330,6 +391,93 @@
       &:hover {
          // FIXME - proc se to nededi?
          background: transparent;
+      }
+   }
+}
+
+// contact form
+// ***************************
+
+.contact-form-c {
+   @include outer-container();
+   margin-top: rem-calc(20px);
+
+   @media #{$large-up} {
+      margin-top: rem-calc(30px);
+   }
+
+   input, textarea {
+      @include fill-parent();
+      background: lighten($color-1, 20%);
+      border: 2px solid $color-4;
+      color: $color-4;
+      padding: rem-calc(14px);
+      font-size: rem-calc(14px);
+      font-family: $primary-font;
+      border-radius: rem-calc(3px);
+      // FIXME - proc je to potreba?
+      float: none !important;
+
+      &.has-error {
+         // border-color: lighten($color-error, 53%);
+         background: lighten($color-error, 20%);
+         // color: lighten($color-error, 53%);
+      }
+   }
+
+   .error {
+      display: block;
+      margin-top: rem-calc(5px);
+      color: lighten($color-error, 20%);
+   }
+
+   input {
+      @media #{$large-up} {
+         @include span-columns(4 of 10);
+      }
+   }
+
+   .row {
+      @include row();
+
+      & > div:first-child {
+         @include fill-parent();
+         line-height: 2;
+         margin-top: rem-calc(10px);
+
+         @media #{$medium-up} {
+            @include span-columns(2);
+         }
+      }
+
+      & > div:last-child {
+         @include fill-parent();
+
+         @media #{$medium-up} {
+            @include span-columns(10);
+         }
+      }
+
+      &:last-child {
+         margin-top: rem-calc(10px);
+
+         @media #{$medium-up} {
+            @include shift(2);
+         }
+
+         button {
+            @include span-columns(6);
+
+            @media #{$large-up} {
+               @include span-columns(2 of 10);
+            }
+         }
+      }
+
+      & + .row {
+         @media #{$medium-up} {
+            margin-top: rem-calc(15px);
+         }
       }
    }
 }

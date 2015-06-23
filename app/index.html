@@ -67,12 +67,13 @@
          <nav class="main-nav-c" ng-click="vm.showHideMobileMenu()">
             <span class="menu-icon fa fa-bars" ng-class="{'menu-icon-open': vm.isMobileMenuVisible}"></span>
             <ul ng-show="vm.isMobileMenuVisible" class="menu">
-               <!-- TODO: linky -->
-               <li><a href="" translate>Domů</a></li>
-               <li><a href="" translate>O mně</a></li>
-               <li><a href="" translate>Reference</a></li>
-               <li><a href="" translate>Nabídka</a></li>
-               <li><a href="" translate>Kontakt</a></li>
+               <!-- FIXME: problikavani pri klikani v menu -->
+               <!-- FIXME: predelat na http://oblador.github.io/angular-scroll -->
+               <li><a href="" ng-click="vm.scrollTo('home')" translate>Domů</a></li>
+               <li><a href="" ng-click="vm.scrollTo('about')" translate>O mně</a></li>
+               <li><a href="" ng-click="vm.scrollTo('reference')" translate>Reference</a></li>
+               <li><a href="" ng-click="vm.scrollTo('services')" trasnslate>Nabídka</a></li>
+               <li><a href="" ng-click="vm.scrollTo('contact')" translate>Kontakt</a></li>
                <li ng-show="vm.isCzechLang" class="change-lang">
                   <a href="" ng-click="vm.changeLanguage('en_US')" translate>Změnit jazyk: angličtina (USA)</a>
                </li>
@@ -83,7 +84,7 @@
          </nav>
       </header>
 
-      <main class="main-content-c">
+      <main class="main-content-c" id="home">
          <div class="fixed-bg bg-1">
             <div class="flags">
                <div class="cs">
@@ -101,21 +102,22 @@
                <h2 translate>Ahoj! Jmenuji se Ivana Doležalová.</h2>
                <h1 translate>Jak Vám mohu pomoci?</h1>
                <div class="main-buttons">
+                  <!-- TODO - linky -->
                   <div><button translate>Chci web</button></div>
                   <div><button translate>Chci freelancera</button></div>
                </div>
             </div>
          </div>
 
-         <div class="scrolling-bg color-2">
+         <div class="scrolling-bg color-2" id="about">
             <div class="container-c">
                <h2 translate>Kdo jsem</h2>
                <p translate>Front-end specialistka na volné noze. Návrhu a vývoji webů se věnuji od svých patnácti let, časem tento koníček přerostl v živnost. V roce 2012 jsem úspěšně dokončila studium informatiky na Masarykově univerzitě v Brně, poté jsem dva roky pracovala v menší české firmě ASSIST na pozici J2EE vývojáře se zaměřením na vývoj front-endu. V současné době působím jako freelancer v Praze a dodávám projekty po celé České republice a občas i do zahraničí (hovořím plynule anglicky).</p>
                <p translate>Jsem velká fanynka a zastánkyně open sourcu i svobodného softwaru. Mám více než osmileté zkušenosti s operačním systémem Linux jako uživatelka a více než dvouleté jako administrátorka.</p>
-               <div>
-                  <!-- TODO: odkazy, ikonky a ICO -->
-                  <div>Stack Owerflow</div>
-                  <div>GitHub</div>
+               <div class="links">
+                  <div class="so"><a href="http://stackoverflow.com/users/3780766/akarienta" target="_blank">Stack Overflow</a></div>
+                  <div class="gh"><a href="https://github.com/Akarienta" target="_blank">GitHub</a></div>
+                  <div class="ico" translate>IČ: 3798003</div>
                </div>
             </div>
          </div>
@@ -170,7 +172,7 @@
             </div>
          </div>
 
-         <div class="scrolling-bg color-2">
+         <div class="scrolling-bg color-2" id="reference">
             <div class="container-c">
                <h2 translate>Realizované projekty</h2>
                <p translate>Zde si můžete prohlédnout mou práci. Nejedná se o kompletní portfolio, řada mých - především starších - projektů již byla archivována.</p>
@@ -294,9 +296,9 @@
             </div>
          </div>
 
-         <div class="scrolling-bg color-4">
+         <div class="scrolling-bg color-4" id="services">
             <div class="container-c">
-               <h2 translate>Proč si vybrat spolupráci se mnou?</h2>
+               <h2 translate>Proč si vybrat spolupráci se mnou</h2>
                <ul>
                   <li translate>Můžeme si nejprve sednout a nezávazně si popovídat. Rozhodnete se sami.</li>
                   <li translate>Zakládám si na lidském přístupu ke klientovi, vždy chci, aby přesně věděl, co dělám a proč to dělám zrovna takto.</li>
@@ -326,7 +328,7 @@
                   <li translate>20% slevu na mé další služby</li>
                </ul>
                <p translate>Pokud některým z výše uvedených termínů nerozumíte, nelekejte se. Můžete mne nezávazně kontaktovat a vše Vám ochotně a zdarma vysvětlím.</p>
-               <p class="large"><b translate>Nyní pozor, zaváděcí ceny s 20% slevou! Pouze do konce července 2015.</b></p>
+               <p class="large"><b translate>Nyní pozor, zaváděcí ceny s 20% slevou! Pouze do konce srpna 2015.</b></p>
                <h3 translate>Cena balíčku: 8 000 Kč <small>(běžně 10 000 Kč)</small></h3>
                <div class="order"><a href="" class="button" translate>Objednat balíček</a></div>
                <small translate>Ceny jsou uvedeny bez DPH. Nejsem plátce DPH.</small>
@@ -348,7 +350,7 @@
                   <li translate>Instalace a administrace aplikací MoinMoin, MediaWiki, Bugzilla, Pootle, WordPress a Joomla!</li>
                </ul>
                <p translate>Rozsah práce, pracovní doba i délka trvání kontraktu je na dohodě. Smluvní ceny.</p>
-               <p class="large"><b translate>Nyní pozor, zaváděcí ceny s 20% slevou! Pouze do konce července 2015.</b></p>
+               <p class="large"><b translate>Nyní pozor, zaváděcí ceny s 20% slevou! Pouze do konce sprna 2015.</b></p>
                <h3 translate>Hodinová sazba: 400 Kč <small>(běžně 500 Kč)</small></h3>
                <div class="order"><a href="" class="button" translate>Poptat freelancera</a></div>
                <small translate>Ceny jsou uvedeny bez DPH. Nejsem plátce DPH.</small>
@@ -362,7 +364,67 @@
             </div>
          </div>
 
-         <!-- TODO: kontaktni formular -->
+         <!-- TODO - odeslani formulare -->
+         <div class="scrolling-bg color-1" id="contact">
+            <div class="container-c deal">
+               <h2 translate>Kontaktní formulář</h2>
+               <form name="contactForm" novalidate>
+                  <div class="contact-form-c">
+                     <div class="row">
+                        <div>Jméno *</div>
+                        <div>
+                           <input type="text" name="name" ng-model="vm.name" minlength="3" required
+                                  ng-class="{'has-error': contactForm.name.$dirty && contactForm.name.$invalid}"
+                                  ng-model-options="{debounce: 800}" />
+                           <span ng-show="contactForm.name.$dirty && contactForm.name.$invalid">
+                              <span class="error" ng-show="contactForm.name.$error.required" translate>Jméno je povinná položka.</span>
+                              <span class="error" ng-show="contactForm.name.$error.minlength" translate>Jméno musí mít alespoň tři znaky.</span>
+                           </span>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div>E-mail *</div>
+                        <div>
+                           <input type="email" name="email" ng-model="vm.email" required
+                                  ng-class="{'has-error': contactForm.email.$dirty && contactForm.email.$invalid}"
+                                  ng-model-options="{debounce: 800}" />
+                           <span ng-show="contactForm.email.$dirty && contactForm.email.$invalid">
+                              <span class="error" ng-show="contactForm.email.$error.required" translate>E-mail je povinná položka.</span>
+                              <span class="error" ng-show="contactForm.email.$error.email" translate>E-mail je neplatný.</span>
+                           </span>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div>Telefon</div>
+                        <div>
+                           <input type="tel" name="phone" ng-model="vm.phone" />
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div>Předmět</div>
+                        <div><input name="subject" ng-model="vm.subject" type="text"/></div>
+                     </div>
+                     <div class="row">
+                        <div>Zpráva *</div>
+                        <div>
+                           <textarea name="msg" ng-model="vm.msg" id="" cols="10" rows="10" required minlength="10"
+                                     ng-class="{'has-error': contactForm.msg.$dirty && contactForm.msg.$invalid}"
+                                     ng-model-options="{debounce: 800}">
+                           </textarea>
+                           <span ng-show="contactForm.msg.$dirty && contactForm.msg.$invalid">
+                              <span class="error" ng-show="contactForm.msg.$error.required" translate>Zpráva je povinná položka.</span>
+                              <span class="error" ng-show="contactForm.msg.$error.minlength" translate>Zpráva musí mít alespoň deset znaků.</span>
+                           </span>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <button ng-click="vm.resetForm()" translate>Vymazat</button>
+                        <button ng-click="vm.submitForm()" translate>Odeslat</button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
 
       </main>
       <!-- <![endif]-->
