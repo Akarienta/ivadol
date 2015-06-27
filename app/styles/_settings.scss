@@ -1,6 +1,20 @@
+// colors
+$color-1: #563E31;
+$color-2: #6093ac;
+$color-3: #ac7b62;
+$color-4: #EFF4F7;
+$color-error: #A72920;
+
 // general
-$base-size: 16px;
-$transition-duration: 0.5s;
+$base-font-size: 16px;
+$base-font-color: $color-1;
+$base-bg-color: $color-2;
+$base-small-font-size: 70%;
+$base-large-font-size-small-screens: 110%;
+$base-large-font-size-medium-up-screens: 130%;
+$base-transition-duration: 0.5s;
+$base-line-height: 1.8;
+$base-headlines-line-height: 1.4;
 
 // fonts
 @import url(http://fonts.googleapis.com/css?family=Quando&subset=latin,latin-ext);
@@ -12,6 +26,17 @@ $header-size-small: 50px;
 $header-size-medium-up: 70px;
 $header-side-margin: 3%;
 
+// buttons
+$button-border-size: 2px;
+$button-padding: 14px;
+$button-font-size: 14px;
+$button-border-radius: 3px;
+$button-min-width: 120px;
+$button-color: $color-4;
+$button-bg-color: $color-2;
+$button-disabled-color: rgba($color-4, 0.6);
+$button-disabled-bg-color: rgba($color-2, 0.4);
+
 // container
 $h1-small-up: 36px;
 $h1-large-up: 48px;
@@ -19,10 +44,3 @@ $h2-small-up: 24px;
 $h2-large-up: 36px;
 $h3-small-up: 22px;
 $h3-large-up: 30px;
-
-// colors
-$color-1: #563E31;
-$color-2: #6093ac;
-$color-3: #ac7b62;
-$color-4: #EFF4F7;
-$color-error: #A72920;

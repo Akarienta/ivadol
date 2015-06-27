@@ -27,6 +27,22 @@
    p+p, p+ul, ul+p {
       margin-top: rem-calc(10px);
    }
+
+   &.unsupported-browser {
+      color: lighten($color-2, 35%);
+
+      h2 {
+         color: $color-4;
+      }
+
+      a {
+         color: $color-1;
+
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+   }
 }
 
 .fixed-bg {

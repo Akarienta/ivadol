@@ -2,7 +2,7 @@
 <html lang="en" ng-app="app" ng-controller="MainController as vm" ng-strict-di>
    <head>
       <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
       <!--[if lte IE 9]>
       <title translate>Nepodporovaný prohlížeč :-(</title>
       <![endif]-->
@@ -44,22 +44,45 @@
       <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=3">
       <meta name="theme-color" content="#563e31">
       <!-- favicon end -->
+
+      <!-- build:js(.) js/vendor.min.js -->
+      <!-- bower:js -->
+      <script src="bower_components/modernizr/modernizr.js"></script>
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angular-route/angular-route.js"></script>
+      <script src="bower_components/angular-gettext/dist/angular-gettext.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/angular-svg-round-progressbar/build/roundProgress.min.js"></script>
+      <script src="bower_components/angular-inview/angular-inview.js"></script>
+      <script src="bower_components/angular-scroll/angular-scroll.js"></script>
+      <!-- endbower -->
+      <!-- endbuild -->
+
+      <!-- build:js(.tmp) js/scripts.min.js -->
+      <script src="scripts/appModule.js"></script>
+      <script src="scripts/mainController.js"></script>
+      <script src="scripts/mobileMenuAnimation.js"></script>
+      <script src="scripts/translations.js"></script>
+      <!-- endbuild -->
    </head>
 
+   <!--[if lte IE 9]>
    <body>
-      <!-- TODO: jayzk? -->
-      <!--[if lte IE 9]>
       <main class="main-content-c">
          <div class="scrolling-bg">
-            <div class="container-c">
-               <h2 translate>Nepodporovaný prohlížeč :-(</h2>
-               <p translate>Používaním zastaralého prohlížeče vystavujete svůj počítač nebezpečí. <a href="http://browsehappy.com">Browse Happy</a> je jedním ze způsobů, jak získat nejnovšjší verzi některého z nejpoužívanějších moderních prohlížečů. Také tam můžete nalézt informace o prohlížeči, který by nejspíše vyhovoval Vaším potřebám lépe, než prohlížeč, který používáte nyní.</p>
+            <div class="container-c unsupported-browser">
+               <h2 ng-bind="vm.unsupportedBrowser"></h2>
+               <p ng-bind-html="vm.unsupportedBrowserText"></p>
             </div>
          </div>
       </main>
-      <![endif]-->
+   </body>
+   <![endif]-->
 
-      <!--[if !IE ]> -->
+   <!--[if !IE ]> -->
+   <body style="display: none;">
+
       <header class="header-c">
          <div id="logo-c">
             <span>{{vm.webName | translate}}</span>
@@ -68,12 +91,11 @@
          <nav class="main-nav-c" ng-click="vm.showHideMobileMenu()">
             <span class="menu-icon fa fa-bars" ng-class="{'menu-icon-open': vm.isMobileMenuVisible}"></span>
             <ul ng-show="vm.isMobileMenuVisible" class="menu">
-               <!-- TODO: vice zvraznit aktivni polozku - zkontrolovat mobilni menu -->
-               <li><a href="#home" du-smooth-scroll du-scrollspy translate>Domů</a></li>
-               <li><a href="#about" du-smooth-scroll du-scrollspy translate>O mně</a></li>
-               <li><a href="#reference" du-smooth-scroll du-scrollspy translate>Reference</a></li>
-               <li><a href="#services" du-smooth-scroll du-scrollspy translate>Nabídka</a></li>
-               <li><a href="#contact" du-smooth-scroll du-scrollspy translate>Kontakt</a></li>
+               <li><a href="#home" du-smooth-scroll du-scrollspy translate ng-click="vm.showHideMobileMenu()">Domů</a></li>
+               <li><a href="#about" du-smooth-scroll du-scrollspy translate ng-click="vm.showHideMobileMenu()">O mně</a></li>
+               <li><a href="#reference" du-smooth-scroll du-scrollspy translate ng-click="vm.showHideMobileMenu()">Reference</a></li>
+               <li><a href="#services" du-smooth-scroll du-scrollspy translate ng-click="vm.showHideMobileMenu()">Nabídka</a></li>
+               <li><a href="#contact" du-smooth-scroll du-scrollspy translate ng-click="vm.showHideMobileMenu()">Kontakt</a></li>
                <li ng-show="vm.isCzechLang" class="change-lang">
                   <a href="" ng-click="vm.changeLanguage('en_US')" translate>Změnit jazyk: angličtina (USA)</a>
                </li>
@@ -103,9 +125,8 @@
                <h2 translate>Ahoj! Jmenuji se Ivana Doležalová.</h2>
                <h1 translate>Jak Vám mohu pomoci?</h1>
                <div class="main-buttons">
-                  <!-- TODO - linky -->
-                  <div><button translate>Chci web</button></div>
-                  <div><button translate>Chci freelancera</button></div>
+                  <div><a href="#orderWeb" class="button" du-smooth-scroll translate>Chci web</a></div>
+                  <div><a href="#orderFreelancer" class="button" du-smooth-scroll translate>Chci freelancera</a></div>
                </div>
             </div>
          </div>
@@ -318,7 +339,7 @@
                </div>
             </div>
 
-            <div class="scrolling-bg color-1">
+            <div class="scrolling-bg color-1" id="orderWeb">
                <div class="container-c deal">
                   <h2 translate>Chci web</h2>
                   <p translate>Většina mých klientů nepotřebuje nic složitého a jejich požadavky se v tom zásadním neliší: chtějí se prezentovat na interentu a oslovit webem své klienty. Za tímto účelem potřebují web, který bude designově odrážet prostředí, ve kterém podnikají, který se bude klientům zobrazovat korektně na jakémkoliv zařízení a na který zvládnou v případě potřeby jednoduše přidat vlastní text bez dodatečnách nákladů.</p>
@@ -336,12 +357,12 @@
                   <p translate>Pokud některým z výše uvedených termínů nerozumíte, nelekejte se. Můžete mne nezávazně kontaktovat a vše Vám ochotně a zdarma vysvětlím.</p>
                   <p class="large"><b translate>Nyní pozor, zaváděcí ceny s 20% slevou! Pouze do konce srpna 2015.</b></p>
                   <h3 translate>Cena balíčku: 8 000 Kč <small>(běžně 10 000 Kč)</small></h3>
-                  <div class="order"><a href="" class="button" translate>Objednat balíček</a></div>
+                  <div class="order"><button ng-click="vm.orderWeb()" translate>Objednat balíček</button></div>
                   <small translate>Ceny jsou uvedeny bez DPH. Nejsem plátce DPH.</small>
                </div>
             </div>
 
-            <div class="scrolling-bg color-2">
+            <div class="scrolling-bg color-2" id="orderFreelancer">
                <div class="container-c deal">
                   <h2 translate>Chci freelancera</h2>
                   <p translate>Ať už jste náročnější klient, poptáváte specifické služby, máte zájem o služby ve větším rozsahu, potřebujete pomoci s vlastním projektem nebo cokoliv jiného, je právě Vám určena tato nabídka. Můžete si mne najmout za fixní hodinovou sazbu nebo objednat na předem zadaný úkol.</p>
@@ -358,7 +379,7 @@
                   <p translate>Rozsah práce, pracovní doba i délka trvání kontraktu je na dohodě. Smluvní ceny.</p>
                   <p class="large"><b translate>Nyní pozor, zaváděcí ceny s 20% slevou! Pouze do konce sprna 2015.</b></p>
                   <h3 translate>Hodinová sazba: 400 Kč <small>(běžně 500 Kč)</small></h3>
-                  <div class="order"><a href="" class="button" translate>Poptat freelancera</a></div>
+                  <div class="order"><button ng-click="vm.orderFreelancer()" translate>Poptat freelancera</button></div>
                   <small translate>Ceny jsou uvedeny bez DPH. Nejsem plátce DPH.</small>
                </div>
             </div>
@@ -371,16 +392,15 @@
             </div>
          </div>
 
-         <!-- TODO - odeslani formulare -->
          <section class="scrolling-bg color-1" id="contact" style="min-height: 100%;">
-            <div class="container-c deal" style="min-height: 100%;">
+            <div class="container-c contact-c">
                <h2 translate>Kontaktní formulář</h2>
                <form name="contactForm" novalidate>
                   <div class="contact-form-c">
                      <div class="row">
-                        <div>Jméno *</div>
+                        <div><label for="name" translate>Jméno</label> *</div>
                         <div>
-                           <input type="text" name="name" ng-model="vm.name" minlength="3" required
+                           <input id="name" type="text" name="name" ng-model="vm.name" minlength="3" required
                                   ng-class="{'has-error': contactForm.name.$dirty && contactForm.name.$invalid}"
                                   ng-model-options="{debounce: 800}" />
                            <span ng-show="contactForm.name.$dirty && contactForm.name.$invalid">
@@ -390,9 +410,9 @@
                         </div>
                      </div>
                      <div class="row">
-                        <div>E-mail *</div>
+                        <div><label for="email" translate>E-mail</label> *</div>
                         <div>
-                           <input type="email" name="email" ng-model="vm.email" required
+                           <input id="email" type="email" name="email" ng-model="vm.email" required
                                   ng-class="{'has-error': contactForm.email.$dirty && contactForm.email.$invalid}"
                                   ng-model-options="{debounce: 800}" />
                            <span ng-show="contactForm.email.$dirty && contactForm.email.$invalid">
@@ -402,19 +422,36 @@
                         </div>
                      </div>
                      <div class="row">
-                        <div>Telefon</div>
+                        <div><label for="tel" translate>Telefon</label></div>
                         <div>
-                           <input type="tel" name="phone" ng-model="vm.phone" />
+                           <input id="tel" type="tel" name="phone" ng-model="vm.phone" />
+                        </div>
+                     </div>
+                     <div class="row check">
+                        <div>
+                           <label for="check">{{vm.captchaFirst}} <translate>plus</translate> {{vm.captchaSecond}} <translate>je</translate></label> *
+                        </div>
+                        <div>
+                           <input id="check" name="check" ng-model="vm.check" type="text" required
+                                  ng-class="{'has-error': (contactForm.check.$dirty && contactForm.check.$invalid) || vm.invalidCheck}"
+                                  ng-change="vm.invalidCheck = false"
+                                  ng-model-options="{debounce: 800}" />
+                           <span ng-show="contactForm.check.$dirty && contactForm.check.$invalid">
+                              <span class="error" ng-show="contactForm.check.$error.required" translate>Pole pro ochranu proti SPAMu musí být vyplněno.</span>
+                           </span>
+                           <span ng-show="contactForm.check.$dirty && contactForm.check.$valid && vm.invalidCheck">
+                              <span class="error" ng-show="vm.invalidCheck" translate>Výsledek součtu není správný.</span>
+                           </span>
                         </div>
                      </div>
                      <div class="row">
-                        <div>Předmět</div>
-                        <div><input name="subject" ng-model="vm.subject" type="text"/></div>
+                        <div><label for="subject" translate>Předmět</label></div>
+                        <div><input id="subject" name="subject" ng-model="vm.subject" type="text"/></div>
                      </div>
                      <div class="row">
-                        <div>Zpráva *</div>
+                        <div><label for="msg" translate>Zpráva</label> *</div>
                         <div>
-                           <textarea name="msg" ng-model="vm.msg" id="" cols="10" rows="10" required minlength="10"
+                           <textarea name="msg" ng-model="vm.msg" id="msg" cols="10" rows="10" required minlength="10"
                                      ng-class="{'has-error': contactForm.msg.$dirty && contactForm.msg.$invalid}"
                                      ng-model-options="{debounce: 800}">
                            </textarea>
@@ -424,42 +461,31 @@
                            </span>
                         </div>
                      </div>
+                     <div class="row user-msg" ng-show="vm.sendInProgress" translate>
+                        Právě probíhá odesílání zprávy...
+                     </div>
+                     <div class="row user-msg" ng-show="vm.showSentMsg()">
+                        {{vm.sentMsg}}
+                     </div>
                      <div class="row">
-                        <button ng-click="vm.resetForm()" translate>Vymazat</button>
-                        <button ng-click="vm.submitForm()" translate>Odeslat</button>
+                        <button ng-click="vm.resetForm()" ng-disabled="vm.sendInProgress" translate>Vymazat</button>
+                        <button ng-click="vm.submitForm()" ng-disabled="vm.sendInProgress" translate>Odeslat</button>
                      </div>
                   </div>
                </form>
             </div>
-
-            <!-- TODO: paticka -->
-            <div style="position: absolute; bottom: 0;">Footer</div>
+            <div class="footer">
+               <div>&copy; 2015 <translate>Ivana Doležalová</translate></div>
+               <div><a href="tel:+420776636086">+420 776 636 086</a></div>
+               <div><a href="mailto:ivana.dolezalova@gmail.com">ivana.dolezalova@gmail.com</a></div>
+               <div translate>IČ: 3798003</div>
+            </div>
 
          </section>
 
       </main>
-      <!-- <![endif]-->
-
-      <!-- build:js(.) js/vendor.min.js -->
-      <!-- bower:js -->
-      <script src="bower_components/modernizr/modernizr.js"></script>
-      <script src="bower_components/jquery/dist/jquery.js"></script>
-      <script src="bower_components/angular/angular.js"></script>
-      <script src="bower_components/angular-route/angular-route.js"></script>
-      <script src="bower_components/angular-gettext/dist/angular-gettext.js"></script>
-      <script src="bower_components/angular-animate/angular-animate.js"></script>
-      <script src="bower_components/angular-svg-round-progressbar/build/roundProgress.min.js"></script>
-      <script src="bower_components/angular-inview/angular-inview.js"></script>
-      <script src="bower_components/angular-scroll/angular-scroll.js"></script>
-      <!-- endbower -->
-      <!-- endbuild -->
-
-      <!-- build:js(.tmp) js/scripts.min.js -->
-      <script src="scripts/appModule.js"></script>
-      <script src="scripts/mainController.js"></script>
-      <script src="scripts/mobileMenuAnimation.js"></script>
-      <script src="scripts/translations.js"></script>
-      <!-- endbuild -->
 
    </body>
+   <!-- <![endif]-->
+
 </html>

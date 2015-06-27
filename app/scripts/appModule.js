@@ -29,6 +29,10 @@
          $rootScope.$on('changeLanguage', function (event, lang) {
             gettextCatalog.setCurrentLanguage(lang);
          });
+
+         if (gettextCatalog.string !== null) {
+            $('body').show();
+         }
       })
 
       /** @ngInject */

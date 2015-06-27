@@ -71,18 +71,24 @@ module.exports = (grunt) ->
             port: 9000
             hostname: 'localhost'
             livereload: true
+         proxies:
+            context: '/akarienta_www/ex2_contact'
+            host: 'localhost'
+            port: '80'
+            https: false
+            changeOrigin: true
          livereload:
             options:
                open: true
                middleware: (connect) ->
-                  [
-                     connect.static('.tmp')
-                     connect().use(
-                             '/bower_components',
-                             connect.static('./bower_components')
-                     )
-                     connect.static(appConfig.app)
-                  ]
+                  middlewares = []
+
+                  middlewares.push require('grunt-connect-proxy/lib/utils').proxyRequest
+                  middlewares.push connect.static '.tmp'
+                  middlewares.push connect().use '/bower_components', connect.static './bower_components'
+                  middlewares.push connect.static appConfig.app
+
+                  return middlewares
 
       # grunt watch
       watch:
@@ -201,6 +207,7 @@ module.exports = (grunt) ->
       'autoprefixer'
       'ngAnnotate'
       'copy:dev'
+      'configureProxies: server'
       'connect:livereload'
       'watch'
    ]

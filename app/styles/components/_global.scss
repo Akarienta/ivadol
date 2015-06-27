@@ -9,12 +9,12 @@ html * {
 
 body {
    font: {
-      size: rem-calc($base-size);
+      size: rem-calc($base-font-size);
       family: $primary-font;
    }
-   color: $color-1;
-   background-color: $color-2;
-   line-height: 1.8;
+   color: $base-font-color;
+   background-color: $base-bg-color;
+   line-height: $base-line-height;
 }
 
 body, html {
@@ -23,61 +23,69 @@ body, html {
 
 a {
    text-decoration: none;
-   @include transition-duration($transition-duration);
+   @include transition-duration($base-transition-duration);
 
    &:hover {
-      @include transition-duration($transition-duration);
+      @include transition-duration($base-transition-duration);
    }
 }
 
 h1 {
-   @include headline($h1-small-up, $h1-large-up, 1.4);
+   @include headline($h1-small-up, $h1-large-up, $base-headlines-line-height);
 }
 
 h2 {
-   @include headline($h2-small-up, $h2-large-up, 1.4);
+   @include headline($h2-small-up, $h2-large-up, $base-headlines-line-height);
 }
 
 h3 {
-   @include headline($h3-small-up, $h3-large-up, 1.4);
+   @include headline($h3-small-up, $h3-large-up, $base-headlines-line-height);
    margin: 0;
 }
 
 small {
-   font-size: 70%;
+   font-size: $base-small-font-size;
 }
 
 .large {
-   font-size: 110%;
+   font-size: $base-large-font-size-small-screens;
 
    @media #{$medium-up} {
-      font-size: 130%;
+      font-size: $base-large-font-size-medium-up-screens;
    }
 }
 
 
 button, .button {
-   background: $color-2;
-   border: 2px solid $color-4;
-   color: $color-4;
-   padding: rem-calc(14px);
-   font-size: rem-calc(14px);
+   text-align: center;
+   background: $button-bg-color;
+   border: $button-border-size solid $button-color;
+   color: $button-color;
+   font-size: rem-calc($button-font-size);
    font-family: $primary-font;
-   border-radius: rem-calc(3px);
+   border-radius: rem-calc($button-border-radius);
    cursor: pointer;
    display: inline-block;
-   min-width: rem-calc(120px);
-   @include transition-duration($transition-duration);
+   min-width: rem-calc($button-min-width);
+   @include transition-duration($base-transition-duration);
 
    &:hover {
       background: transparent;
-      @include transition-duration($transition-duration);
+      @include transition-duration($base-transition-duration);
    }
 
    &[disabled] {
-      background: rgba($color-2, 0.4);
-      color: rgba($color-4, 0.6);
-      border-color: rgba($color-4, 0.6);
+      background: $button-disabled-bg-color;
+      color: $button-disabled-color;
+      border-color: $button-disabled-color;
       cursor: default;
    }
+}
+
+button {
+   padding: rem-calc($button-padding);
+}
+
+.button {
+   padding: rem-calc($button-padding - $button-border-size);
 }

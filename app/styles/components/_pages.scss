@@ -1,10 +1,12 @@
+// TODO - extrahovat promenne do nastaveni + rozdelit na vice souboru
+
 // main
 // ***************************
 
 .main-buttons {
    margin-top: rem-calc(30px);
 
-   button {
+   a {
       min-width: rem-calc(160px);
       margin: 0;
       width: auto;
@@ -155,10 +157,10 @@
    }
 
    a {
-      color: lighten($color-1, 70%);
+      color: $color-4;
 
       &:hover {
-         color: lighten($color-2, 35%);
+         color: $color-1;
       }
    }
 }
@@ -249,7 +251,7 @@
    }
 
    .project-text-c {
-      @include transition-duration($transition-duration);
+      @include transition-duration($base-transition-duration);
       text-align: center;
       background-color: rgba($color-3, 0.9);
       opacity: 0;
@@ -291,7 +293,7 @@
 
    &:hover {
       .project-text-c {
-         @include transition-duration($transition-duration);
+         @include transition-duration($base-transition-duration);
          opacity: 1;
       }
    }
@@ -307,7 +309,7 @@
 }
 
 .quote-c {
-   @include transition-duration($transition-duration);
+   @include transition-duration($base-transition-duration);
    color: $color-1;
    padding: rem-calc(50px) rem-calc(20px) rem-calc(20px) rem-calc(20px);
 
@@ -458,8 +460,14 @@
          }
       }
 
+      & + .row {
+         @media #{$medium-up} {
+            margin-top: rem-calc(10px);
+         }
+      }
+
       &:last-child {
-         margin-top: rem-calc(10px);
+         margin-top: rem-calc(20px);
 
          @media #{$medium-up} {
             @include shift(2);
@@ -474,10 +482,56 @@
          }
       }
 
-      & + .row {
+      &.user-msg {
          @media #{$medium-up} {
-            margin-top: rem-calc(15px);
+            @include span-columns(10);
+            @include shift(2);
+            color: $color-4;
+            margin-bottom: rem-calc(15px);
          }
       }
+
+      &.check {
+         margin-bottom: rem-calc(25px);
+
+         input {
+            max-width: rem-calc(80px);
+         }
+      }
+   }
+}
+
+.contact-c {
+   margin-bottom: rem-calc(120px);
+
+   @media #{$medium-up} {
+      margin-bottom: rem-calc(20px);
+   }
+
+   @media #{$large-up} {
+      margin-bottom: rem-calc(0px);
+   }
+}
+
+.footer {
+   position: absolute;
+   bottom: 0;
+   text-align: center;
+   width: 100%;
+   background: $color-2;
+   padding: rem-calc(20px);
+   color: lighten($color-2, 35%);
+
+   a {
+      color: $color-4;
+
+      &:hover {
+         color: $color-1;
+      }
+   }
+
+   div {
+      display: inline-block;
+      padding: 0 rem-calc(10px);
    }
 }

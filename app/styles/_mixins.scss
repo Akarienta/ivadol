@@ -27,7 +27,7 @@
    }
 
    opacity: 0;
-   @include animation(fadeIn $transition-duration);
+   @include animation(fadeIn $base-transition-duration);
    @include animation-iteration-count(1);
    @include animation-fill-mode(forwards);
    @include animation-delay($delay);

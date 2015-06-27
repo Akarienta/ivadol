@@ -1,3 +1,5 @@
+// TODO - extrahovat promenne do nastaveni
+
 .header-c {
    position: fixed;
    top: 0;
@@ -74,7 +76,7 @@
       line-height: rem-calc($header-size-small);
       text-align: center;
       cursor: pointer;
-      @include transition-duration($transition-duration);
+      @include transition-duration($base-transition-duration);
       &.menu-icon-open {
          @include transform(rotate(90deg));
       }
