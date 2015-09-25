@@ -13,15 +13,15 @@
       vm.isMobileMenuVisible = false;
 
       vm.changeLanguage = changeLanguage;
-      vm.isCzechLang = true;
+      vm.isCzechLang = null;
       vm.showHideMobileMenu = showHideMobileMenu;
       vm.webTitle = '';
       vm.webName = '';
       vm.isProgressVisible = [false, false, false, false, false, false];
       vm.startProgress = startProgress;
       vm.getPortfolioText = getPortfolioText;
-      vm.references = getReferences();
-      vm.activeReference = 0;
+      vm.references = [];
+      vm.activeReference = Math.floor(Math.random() * 4);
       vm.referenceChange = true;
       vm.changeReference = changeReference;
       vm.resetForm = resetForm;
@@ -45,16 +45,20 @@
       vm.invalidCheck = false;
 
       vm.unsupportedBrowser = gettextCatalog.getString('Nepodporovaný prohlížeč :-(');
-      vm.unsupportedBrowserText = $sce.trustAsHtml(gettextCatalog.getString('Používaním zastaralého prohlížeče vystavujete svůj počítač nebezpečí. <a href="http://browsehappy.com">Browse Happy</a> je jedním ze způsobů, jak získat nejnovšjší verzi některého z nejpoužívanějších moderních prohlížečů. Také tam můžete nalézt informace o prohlížeči, který by nejspíše vyhovoval Vaším potřebám lépe, než prohlížeč, který používáte nyní.'));
+      /// keep a markers in text
+      vm.unsupportedBrowserText = $sce.trustAsHtml(gettextCatalog.getString('Používaním zastaralého prohlížeče vystavujete svůj počítač nebezpečí. <a href="http://browsehappy.com">Browse Happy</a> je jedním ze způsobů, jak získat nejnovější verzi některého z nejpoužívanějších moderních prohlížečů. Také tam můžete nalézt informace o prohlížeči, který by nejspíše vyhovoval Vaším potřebám lépe, než prohlížeč, který používáte nyní.'));
 
       resolveNames();
+      reloadReferences();
       reloadCaptcha();
 
       ////////////
 
       function changeLanguage(lang) {
          vm.isCzechLang = lang === 'cs_CZ';
-         return $rootScope.$emit('changeLanguage', lang);
+         $rootScope.$emit('changeLanguage', lang);
+         reloadReferences();
+         resetForm();
       }
 
       function showHideMobileMenu() {
@@ -75,8 +79,10 @@
             /// webpage title
             vm.webTitle = gettextCatalog.getString('CHCI WEB - profesionální web rychle a levně');
             /// webpage name (next to the logo)
-            vm.webName = gettextCatalog.getString('Chci web');
+            vm.webName = gettextCatalog.getString('Chci web', null, 'name');
          }
+
+         vm.isCzechLang = gettextCatalog.getCurrentLanguage() === 'cs_CZ';
       }
 
       function startProgress(index) {
@@ -93,18 +99,25 @@
          }
       }
 
-      function getReferences() {
-         var refs = [];
-         refs.push({
+      function reloadReferences() {
+         // TODO - doplnit recenze - Lenka, Terka
+         vm.references = [];
+         vm.references.push({
             text: gettextCatalog.getString('V oblasti tvorby internetových stránek jsem úplný laik, a tak jsem musela sehnat profesionála v tomto oboru. Měla jsem velké štěstí v podobě Ivy Doležalové, která je podle mne v oboru jednička. Stránky vytvořila dle mé potřeby a spokojenosti. Její rady a poznatky byly vždy věcné a velmi užitečné. Pokud hledáte profesionalitu, kvalitu a osobní přístup, služby Ivy Doležalové mohu jen doporučit.'),
             author: gettextCatalog.getString('Pavla, zadavatelka webu Koliba Opava')
          });
-         refs.push({
+         vm.references.push({
             text: gettextCatalog.getString('Spolupráce s Ivanou byla příjemná a bezproblémová. Její práce byla vysoce profesionální, ve všem nám vyšla vstříc. Rozhodně doporučuji.'),
             author: gettextCatalog.getString('Katka, zadavatelka webu Všem ženám')
          });
-         // TODO - doplnit recenze - Lenka, Terka
-         return refs;
+         vm.references.push({
+            text: gettextCatalog.getString('Jako nezisková organizace jsme hledali někoho, kdo by nám byl ochoten vytvořit webové stránky bez velkých nákladů. A právě Iva nám vyšla vstříc. Spolupráce s ní byla pohodová, řídila se našimi požadavky, které doplnila svými dobrými nápady a vznikly z toho velmi podařené stránky. Doporučujeme.'),
+            author: gettextCatalog.getString('Za skautský oddíl Heřmánek Lenka Gallusová, zadavatelka webu Skaut Velká Polom')
+         });
+         vm.references.push({
+            text: gettextCatalog.getString('Iva vzala bez výjimky v potaz design našeho starého webu a vytvořila jeho originální a moderní dvojče. Oceňuji pohodovou komunikaci, profesionální přístup a otevřenou mysl při zpracování nestandardního tématu. Nemohu jinak než doporučit.'),
+            author: gettextCatalog.getString('Terka, zadavatelka webu Krchov pod sakurou')
+         });
       }
 
       function changeReference(next) {
@@ -156,16 +169,13 @@
             'msg': vm.msg.replace(/(\n)+/g, '<br />')
          };
 
-         console.log('trim: ' + vm.subject.trim() === '');
-         console.log(data.subject);
-
-         $http.post('akarienta_www/ex2_contact/contact-form.php', data)
+         $http.post('mail/contact-form.php', data)
             .success(function () {
-               vm.sentMsg = gettextCatalog.getString('Vzkaz byl úspěšně odeslán, děkuji. Budu Vás kontaktovat co nejdřívě.');
+               vm.sentMsg = gettextCatalog.getString('Vzkaz byl úspěšně odeslán, děkuji. Budu Vás kontaktovat co nejdříve.');
                afterSend();
             })
             .error(function () {
-               vm.sentMsg = gettextCatalog.getString('Vzkaz se nepodařilo odeslat kvůli chybě serveru. Omlouvám se za způsobené potíže, napište mi prosím klasický e-mail na ivana.dolezalova@gmai.com nebo mi zavolejte na 776 636 086.');
+               vm.sentMsg = gettextCatalog.getString('Vzkaz se nepodařilo odeslat kvůli chybě serveru. Omlouvám se za způsobené potíže, napište mi prosím klasický e-mail na ivana.dolezalova@gmail.com nebo mi zavolejte na 776 636 086.');
                afterSend();
             });
       }
@@ -173,8 +183,8 @@
       function orderWeb() {
          /// e-mail subject
          vm.subject = gettextCatalog.getString('Objednávka webového balíčku');
-         /// e-mail message - keep \n characters for line break
-         vm.msg = gettextCatalog.getString('Dobrý den,\n\nrád(a) bych si objednal(a) službu "Webový balíček" za jednotnou cenu 8 000 Kč. Kontaktujte mne, prosím, abychom se domluvili na podrobnostech.\n\nS pozdravem\n');
+         /// e-mail message, currency to dollars
+         vm.msg = gettextCatalog.getString('Rád(a) bych si objednal(a) službu "Webový balíček" za jednotnou cenu 8 000 Kč. Kontaktujte mne, prosím, abychom se domluvili na podrobnostech.');
 
          scrollToContact();
       }
@@ -182,8 +192,8 @@
       function orderFreelancer() {
          /// e-mail subject
          vm.subject = gettextCatalog.getString('Poptávka freelancera');
-         /// e-mail message - keep \n characters for line break
-         vm.msg = gettextCatalog.getString('Dobrý den,\n\nměl(a) bych zájem si Vás najmout na svůj projekt. Kontaktujte mne, prosím, abychom se  domluvili na podrobnostech.\n\nS pozdravem\n');
+         /// e-mail message
+         vm.msg = gettextCatalog.getString('Měl(a) bych zájem si Vás najmout na svůj projekt. Kontaktujte mne, prosím, abychom se domluvili na podrobnostech.');
 
          scrollToContact();
       }

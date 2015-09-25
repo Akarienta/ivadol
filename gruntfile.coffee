@@ -69,11 +69,11 @@ module.exports = (grunt) ->
       connect:
          options:
             port: 9000
-            hostname: 'localhost'
+            hostname: '192.168.200.104'
             livereload: true
          proxies:
             context: '/akarienta_www/ex2_contact'
-            host: 'localhost'
+            host: '192.168.200.104'
             port: '80'
             https: false
             changeOrigin: true
@@ -129,7 +129,7 @@ module.exports = (grunt) ->
                   expand: true,
                   cwd: '<%= config.app %>/images',
                   src: '**/*.{png,jpg,jpeg,gif,svg}',
-                  dest: '<%= config.dist %>/img'
+                  dest: '<%= config.dist %>/images'
                }
                {
                   # favicon
@@ -186,7 +186,7 @@ module.exports = (grunt) ->
             files:
                '<%= config.app %>/po/template.pot': [
                   '<%= config.app %>/**/*.html'
-                  '.tmp/scripts/**/*.js'
+                  '<%= config.app %>/scripts/**/*.js'
                ]
 
       # compiles translation files
