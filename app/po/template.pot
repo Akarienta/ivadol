@@ -4,91 +4,91 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: app/index.html:438
+#: app/index.html:446
 msgid "(číslo)"
 msgstr ""
 
-#: app/index.html:352
+#: app/index.html:362
 msgid "2 libovolně dlouhé osobní konzultace v Praze a okolí, jinde za doplatek nebo po Skypu"
 msgstr ""
 
-#: app/index.html:350
+#: app/index.html:360
 msgid "20 hodin práce profesionálního webdesignéra na úpravě webu dle Vašich potřeb"
 msgstr ""
 
-#: app/index.html:355
+#: app/index.html:365
 msgid "20% slevu na mé další služby"
 msgstr ""
 
-#: app/index.html:125
+#: app/index.html:135
 msgid "Ahoj! Jmenuji se Ivana Doležalová."
 msgstr ""
 
 #. remove special characters if any
-#: app/index.html:250
+#: app/index.html:260
 msgid "Alisen"
 msgstr ""
 
 #. remove special characters if any
-#: app/index.html:241
+#: app/index.html:251
 msgid "ASSIST"
 msgstr ""
 
-#: app/index.html:368
+#: app/index.html:377
 msgid "Ať už jste náročnější klient, poptáváte specifické služby, máte zájem o služby ve větším rozsahu, potřebujete pomoci s vlastním projektem nebo cokoliv jiného, je právě Vám určena tato nabídka. Můžete si mne najmout za fixní hodinovou sazbu nebo objednat na předem zadaný úkol."
 msgstr ""
 
-#: app/index.html:334
+#: app/index.html:344
 msgid "Až 90 % mých klientů se na mne při potřebě tvorby dalšího webu obrátilo znovu."
 msgstr ""
 
-#: app/index.html:194
+#: app/index.html:204
 msgid "Až 90 % mých klientů si myslí, že někdy v minulosti zaplatili za tvorbu webu neadekvátní částku a přitom nebyli spokojení s výsledkem."
 msgstr ""
 
-#: app/index.html:242
+#: app/index.html:252
 msgid "březen 2013"
 msgstr ""
 
-#. keep <small> markers, currency to dollars
-#: app/index.html:359
-msgid "Cena balíčku: 8 000 Kč <small>(běžně 10 000 Kč)</small>"
+#. currency to dollars
+#: app/index.html:368
+msgid "Cena balíčku: 10 000 Kč"
 msgstr ""
 
-#: app/index.html:361
-#: app/index.html:383
+#: app/index.html:370
+#: app/index.html:391
 msgid "Ceny jsou uvedeny bez DPH. Nejsem plátce DPH."
 msgstr ""
 
-#: app/index.html:185
+#: app/index.html:195
 msgid "Co dělám"
 msgstr ""
 
-#: app/index.html:351
+#: app/index.html:361
 msgid "CZ doménu dle Vašeho výběru a webhosting na jeden rok"
 msgstr ""
 
-#: app/index.html:312
+#: app/index.html:322
 msgid "Další"
 msgstr ""
 
-#: app/index.html:94
+#: app/index.html:104
 msgid "Domů"
 msgstr ""
 
-#: app/index.html:211
+#: app/index.html:221
 msgid "duben 2015"
 msgstr ""
 
-#: app/index.html:413
+#: app/index.html:421
 msgid "E-mail"
 msgstr ""
 
-#: app/index.html:420
+#: app/index.html:428
 msgid "E-mail je neplatný."
 msgstr ""
 
-#: app/index.html:419
+#: app/index.html:427
 msgid "E-mail je povinná položka."
 msgstr ""
 
@@ -102,51 +102,51 @@ msgstr ""
 msgid "Freelancer Ivana - vizitka"
 msgstr ""
 
-#: app/index.html:243
-#: app/index.html:252
+#: app/index.html:253
+#: app/index.html:262
 msgid "front-end"
 msgstr ""
 
-#: app/index.html:138
+#: app/index.html:148
 msgid "Front-end specialistka na volné noze. Návrhu a vývoji webů se věnuji od svých patnácti let, časem tento koníček přerostl v živnost. V roce 2012 jsem úspěšně dokončila studium informatiky na Masarykově univerzitě v Brně, poté jsem dva roky pracovala v menší české firmě ASSIST na pozici J2EE vývojáře se zaměřením na vývoj front-endu. V současné době působím jako freelancer v Praze a dodávám projekty po celé České republice a občas i do zahraničí (hovořím plynule anglicky)."
 msgstr ""
 
-#: app/index.html:353
+#: app/index.html:363
 msgid "Garanci dodání hotového webu do dvou týdnů od uzavření objednávky"
 msgstr ""
 
 #. remove special characters if any
-#: app/index.html:290
+#: app/index.html:300
 msgid "GEO-MP"
 msgstr ""
 
-#. keep <small> markers, currency to dollars
-#: app/index.html:381
-msgid "Hodinová sazba: 400 Kč <small>(běžně 500 Kč)</small>"
+#. currency to dollars
+#: app/index.html:389
+msgid "Hodinová sazba: 500 Kč"
 msgstr ""
 
 #. translate to Czech
-#: app/index.html:103
+#: app/index.html:113
 msgid "Change language: Czech"
 msgstr ""
 
 #. translate to Czech
-#: app/index.html:100
+#: app/index.html:110
 msgid "Change language: English (USA)"
 msgstr ""
 
-#: app/index.html:129
-#: app/index.html:367
+#: app/index.html:139
+#: app/index.html:376
 msgid "Chci freelancera"
 msgstr ""
 
-#: app/index.html:128
+#: app/index.html:138
 msgctxt "button"
 msgid "Chci web"
 msgstr ""
 
 #. webpage name (next to the logo)
-#: app/index.html:344
+#: app/index.html:354
 #: app/scripts/mainController.js:82
 msgid "Chci web"
 msgstr ""
@@ -156,24 +156,24 @@ msgstr ""
 msgid "CHCI WEB - profesionální web rychle a levně"
 msgstr ""
 
-#: app/index.html:390
+#: app/index.html:398
 msgid "I Vy můžete mít kvalitní web za rozumnou cenu. Třeba za dva týdny."
 msgstr ""
 
-#: app/index.html:143
-#: app/index.html:481
+#: app/index.html:153
+#: app/index.html:489
 msgid "IČ: 3798003"
 msgstr ""
 
-#: app/index.html:377
+#: app/index.html:386
 msgid "Instalace a administrace aplikací MoinMoin, MediaWiki, Bugzilla, Pootle, WordPress a Joomla!"
 msgstr ""
 
-#: app/index.html:376
+#: app/index.html:385
 msgid "Instalace a administrace linuxového serveru (distribuce CentOS a Debian)"
 msgstr ""
 
-#: app/index.html:349
+#: app/index.html:359
 msgid "Instalaci redakčního systému WordPress nebo Joomla!"
 msgstr ""
 
@@ -182,11 +182,11 @@ msgid "Iva vzala bez výjimky v potaz design našeho starého webu a vytvořila 
 msgstr ""
 
 #. remove special characters
-#: app/index.html:478
+#: app/index.html:486
 msgid "Ivana Doležalová"
 msgstr ""
 
-#: app/index.html:126
+#: app/index.html:136
 msgid "Jak Vám mohu pomoci?"
 msgstr ""
 
@@ -194,47 +194,47 @@ msgstr ""
 msgid "Jako nezisková organizace jsme hledali někoho, kdo by nám byl ochoten vytvořit webové stránky bez velkých nákladů. A právě Iva nám vyšla vstříc. Spolupráce s ní byla pohodová, řídila se našimi požadavky, které doplnila svými dobrými nápady a vznikly z toho velmi podařené stránky. Doporučujeme."
 msgstr ""
 
-#: app/index.html:271
+#: app/index.html:281
 msgid "jaro 2010"
 msgstr ""
 
-#: app/index.html:432
+#: app/index.html:440
 msgid "je"
 msgstr ""
 
-#: app/index.html:346
+#: app/index.html:356
 msgid "Jestli se do této kategorie řadíte i Vy, mohl by Vás oslovit následující balíček připravený na míru těmto potřebám. Za jednotnou a konečnou cenu získáte:"
 msgstr ""
 
-#: app/index.html:401
+#: app/index.html:409
 msgid "Jméno"
 msgstr ""
 
-#: app/index.html:407
+#: app/index.html:415
 msgid "Jméno je povinná položka."
 msgstr ""
 
-#: app/index.html:408
+#: app/index.html:416
 msgid "Jméno musí mít alespoň tři znaky."
 msgstr ""
 
-#: app/index.html:333
+#: app/index.html:343
 msgid "Jsem časově flexibilní a mohu přijet kamkoliv za Vámi."
 msgstr ""
 
-#: app/index.html:335
+#: app/index.html:345
 msgid "Jsem profesionál a tvorba webů mne živí. Není to koníček ani přivýdělek."
 msgstr ""
 
-#: app/index.html:337
+#: app/index.html:347
 msgid "Jsem schopná zajistit profesionální překlad Vašeho webu do mnoha jazyků."
 msgstr ""
 
-#: app/index.html:369
+#: app/index.html:378
 msgid "Jsem schopná zajistit tyto činnosti:"
 msgstr ""
 
-#: app/index.html:139
+#: app/index.html:149
 msgid "Jsem velká fanynka a zastánkyně open sourcu i svobodného softwaru. Mám více než osmileté zkušenosti s operačním systémem Linux jako uživatelka a více než dvouleté jako administrátorka."
 msgstr ""
 
@@ -242,7 +242,7 @@ msgstr ""
 msgid "Katka, zadavatelka webu Všem ženám"
 msgstr ""
 
-#: app/index.html:137
+#: app/index.html:147
 msgid "Kdo jsem"
 msgstr ""
 
@@ -250,66 +250,66 @@ msgstr ""
 msgid "Klikněte pro detail."
 msgstr ""
 
-#: app/index.html:371
+#: app/index.html:380
 msgid "Kódování front-endu v HTML, CSS (SASS), ZURB Foundation a Bootstrap"
 msgstr ""
 
 #. remove special characters if any
-#: app/index.html:210
+#: app/index.html:220
 msgid "Koliba Opava"
 msgstr ""
 
-#: app/index.html:272
+#: app/index.html:282
 msgid "kompletní web"
 msgstr ""
 
-#: app/index.html:98
+#: app/index.html:108
 msgid "Kontakt"
 msgstr ""
 
-#: app/index.html:397
+#: app/index.html:405
 msgid "Kontaktní formulář"
 msgstr ""
 
-#: app/index.html:391
+#: app/index.html:399
 msgid "Kontaktujte mne. Zařídím to."
 msgstr ""
 
 #. remove special characters if any
-#: app/index.html:260
+#: app/index.html:270
 msgid "Krchov pod sakurou"
 msgstr ""
 
-#: app/index.html:261
+#: app/index.html:271
 msgid "květen 2011"
 msgstr ""
 
-#: app/index.html:221
+#: app/index.html:231
 msgid "leden 2015"
 msgstr ""
 
-#: app/index.html:291
+#: app/index.html:301
 msgid "léto 2005"
 msgstr ""
 
-#: app/index.html:251
+#: app/index.html:261
 msgid "listopad 2012"
 msgstr ""
 
-#: app/index.html:231
+#: app/index.html:241
 msgid "listopad 2014"
 msgstr ""
 
-#. e-mail message - keep \n characters for line break
+#. e-mail message
 #: app/scripts/mainController.js:196
 msgid "Měl(a) bych zájem si Vás najmout na svůj projekt. Kontaktujte mne, prosím, abychom se domluvili na podrobnostech."
 msgstr ""
 
-#: app/index.html:330
+#: app/index.html:340
 msgid "Můžeme si nejprve sednout a nezávazně si popovídat. Rozhodnete se sami."
 msgstr ""
 
-#: app/index.html:97
+#: app/index.html:107
 msgid "Nabídka"
 msgstr ""
 
@@ -317,18 +317,18 @@ msgstr ""
 msgid "Najeďte myší pro detail."
 msgstr ""
 
-#: app/index.html:373
+#: app/index.html:382
 msgid "Návrh, design a realizace kompletního webu pro živnostníky nebo menší firmy"
 msgstr ""
 
-#: app/index.html:222
-#: app/index.html:262
-#: app/index.html:282
+#: app/index.html:232
+#: app/index.html:272
+#: app/index.html:292
 msgid "návrh, design, realizace"
 msgstr ""
 
-#: app/index.html:212
-#: app/index.html:232
+#: app/index.html:222
+#: app/index.html:242
 msgid "návrh, realizace"
 msgstr ""
 
@@ -336,20 +336,15 @@ msgstr ""
 msgid "Nepodporovaný prohlížeč :-("
 msgstr ""
 
-#: app/index.html:336
+#: app/index.html:346
 msgid "Neustále se vzdělávám a k realizaci projektů tak vždy využívám moderní technologie i postupy."
 msgstr ""
 
-#: app/index.html:358
-#: app/index.html:380
-msgid "Nyní pozor, zaváděcí ceny s 20% slevou! Pouze do konce srpna 2015."
-msgstr ""
-
-#: app/index.html:95
+#: app/index.html:105
 msgid "O mně"
 msgstr ""
 
-#: app/index.html:360
+#: app/index.html:369
 msgid "Objednat balíček"
 msgstr ""
 
@@ -358,7 +353,7 @@ msgstr ""
 msgid "Objednávka webového balíčku"
 msgstr ""
 
-#: app/index.html:472
+#: app/index.html:480
 msgid "Odeslat"
 msgstr ""
 
@@ -366,23 +361,23 @@ msgstr ""
 msgid "Pavla, zadavatelka webu Koliba Opava"
 msgstr ""
 
-#: app/index.html:432
+#: app/index.html:440
 msgid "plus"
 msgstr ""
 
-#: app/index.html:281
+#: app/index.html:291
 msgid "podzim 2007"
 msgstr ""
 
-#: app/index.html:357
+#: app/index.html:367
 msgid "Pokud některým z výše uvedených termínů nerozumíte, nelekejte se. Můžete mne nezávazně kontaktovat a vše Vám ochotně a zdarma vysvětlím."
 msgstr ""
 
-#: app/index.html:440
+#: app/index.html:448
 msgid "Pole pro ochranu proti SPAMu musí být vyplněno."
 msgstr ""
 
-#: app/index.html:382
+#: app/index.html:390
 msgid "Poptat freelancera"
 msgstr ""
 
@@ -391,7 +386,7 @@ msgstr ""
 msgid "Poptávka freelancera"
 msgstr ""
 
-#: app/index.html:332
+#: app/index.html:342
 msgid "Používám při práci prototypování, takže výslednou podobu webu uvidíte předem."
 msgstr ""
 
@@ -400,85 +395,85 @@ msgstr ""
 msgid "Používaním zastaralého prohlížeče vystavujete svůj počítač nebezpečí. <a href=\"http://browsehappy.com\">Browse Happy</a> je jedním ze způsobů, jak získat nejnovější verzi některého z nejpoužívanějších moderních prohlížečů. Také tam můžete nalézt informace o prohlížeči, který by nejspíše vyhovoval Vaším potřebám lépe, než prohlížeč, který používáte nyní."
 msgstr ""
 
-#: app/index.html:464
+#: app/index.html:472
 msgid "Právě probíhá odesílání zprávy..."
 msgstr ""
 
-#: app/index.html:328
+#: app/index.html:338
 msgid "Proč si vybrat spolupráci se mnou"
 msgstr ""
 
-#: app/index.html:348
+#: app/index.html:358
 msgid "Profesionální responsivní šablonu pro redakční systém WordPress nebo Joomla!"
 msgstr ""
 
-#: app/index.html:311
+#: app/index.html:321
 msgid "Předchozí"
 msgstr ""
 
-#: app/index.html:448
+#: app/index.html:456
 msgid "Předmět"
 msgstr ""
 
-#: app/index.html:213
 #: app/index.html:223
 #: app/index.html:233
-#: app/index.html:253
-#: app/index.html:273
+#: app/index.html:243
+#: app/index.html:263
 #: app/index.html:283
 #: app/index.html:293
+#: app/index.html:303
 msgid "Přejít na web"
 msgstr ""
 
-#: app/index.html:354
+#: app/index.html:364
 msgid "Půl roku podpory v podobě on-line konzultací"
 msgstr ""
 
 #. remove special characters if any
-#: app/index.html:270
+#: app/index.html:280
 msgid "R. B. Chandeliers"
 msgstr ""
 
-#. e-mail message - keep \n characters for line break, currency to dollars
+#. e-mail message, currency to dollars
 #: app/scripts/mainController.js:187
-msgid "Rád(a) bych si objednal(a) službu \"Webový balíček\" za jednotnou cenu 8 000 Kč. Kontaktujte mne, prosím, abychom se domluvili na podrobnostech."
+msgid "Rád(a) bych si objednal(a) službu \"Webový balíček\" za jednotnou cenu 10 000 Kč. Kontaktujte mne, prosím, abychom se domluvili na podrobnostech."
 msgstr ""
 
-#: app/index.html:202
+#: app/index.html:212
 msgid "Realizované projekty"
 msgstr ""
 
-#: app/index.html:374
+#: app/index.html:383
 msgid "Redesign nebo optimalizace stávajícího webu"
 msgstr ""
 
-#: app/index.html:96
+#: app/index.html:106
 msgid "Reference"
 msgstr ""
 
-#: app/index.html:292
+#: app/index.html:302
 msgid "revize front-endu"
 msgstr ""
 
-#: app/index.html:379
+#: app/index.html:388
 msgid "Rozsah práce, pracovní doba i délka trvání kontraktu je na dohodě. Smluvní ceny."
 msgstr ""
 
 #. remove special characters if any
-#: app/index.html:220
+#: app/index.html:230
 msgid "S chutí do práce"
 msgstr ""
 
 #. remove special characters if any
-#: app/index.html:280
+#: app/index.html:290
 msgid "Skaut Velká Polom"
 msgstr ""
 
-#: app/index.html:303
+#: app/index.html:313
 msgid "Slova klientů"
 msgstr ""
 
-#: app/index.html:186
+#: app/index.html:196
 msgid "Specializuji se na návrh a tvorbu prezentačních webů pro živnostníky a menší firmy. Má typická práce spočívá v analýze a pochopení odvětví, ve kterém se klient pohybuje, následnému návrhu webové prezentace jemu na míru a po odsouhlasení samozřejmě i realizaci."
 msgstr ""
 
@@ -486,11 +481,11 @@ msgstr ""
 msgid "Spolupráce s Ivanou byla příjemná a bezproblémová. Její práce byla vysoce profesionální, ve všem nám vyšla vstříc. Rozhodně doporučuji."
 msgstr ""
 
-#: app/index.html:320
+#: app/index.html:330
 msgid "Šetřete svůj čas, peníze i nervy. Přestaňte bojovat s větrnými mlýny a obraťte se na profesionála."
 msgstr ""
 
-#: app/index.html:425
+#: app/index.html:433
 msgid "Telefon"
 msgstr ""
 
@@ -498,7 +493,7 @@ msgstr ""
 msgid "Terka, zadavatelka webu Krchov pod sakurou"
 msgstr ""
 
-#: app/index.html:187
+#: app/index.html:197
 msgid "Tím však má práce nekončí, dále se starám, aby byl web na internetu vidět a zůstávám s klienty v kontaktu, aby byli schopní reagovat na situaci na trhu přizpůsobením jejich prezentace tak, aby byla stále aktuální a v neposlední řadě i moderní."
 msgstr ""
 
@@ -506,32 +501,32 @@ msgstr ""
 msgid "V oblasti tvorby internetových stránek jsem úplný laik, a tak jsem musela sehnat profesionála v tomto oboru. Měla jsem velké štěstí v podobě Ivy Doležalové, která je podle mne v oboru jednička. Stránky vytvořila dle mé potřeby a spokojenosti. Její rady a poznatky byly vždy věcné a velmi užitečné. Pokud hledáte profesionalitu, kvalitu a osobní přístup, služby Ivy Doležalové mohu jen doporučit."
 msgstr ""
 
-#: app/index.html:345
+#: app/index.html:355
 msgid "Většina mých klientů nepotřebuje nic složitého a jejich požadavky se v tom zásadním neliší: chtějí se prezentovat na internetu a oslovit webem své klienty. Za tímto účelem potřebují web, který bude designově odrážet prostředí, ve kterém podnikají, který se bude klientům zobrazovat korektně na jakémkoliv zařízení a na který zvládnou v případě potřeby jednoduše přidat vlastní text bez dodatečných nákladů."
 msgstr ""
 
-#: app/index.html:321
+#: app/index.html:331
 msgid "Vím, jak na to. Pomohu Vám."
 msgstr ""
 
 #. remove special characters if any
-#: app/index.html:230
+#: app/index.html:240
 msgid "Všem ženám"
 msgstr ""
 
-#: app/index.html:471
+#: app/index.html:479
 msgid "Vymazat"
 msgstr ""
 
-#: app/index.html:443
+#: app/index.html:451
 msgid "Výsledek součtu není správný. Zadali jste číslo?"
 msgstr ""
 
-#: app/index.html:375
+#: app/index.html:384
 msgid "Vývoj back-endu v Javě EE nebo Pythonu"
 msgstr ""
 
-#: app/index.html:372
+#: app/index.html:381
 msgid "Vývoj front-endu v JavaScriptu, jQuery a AngularJS"
 msgstr ""
 
@@ -547,26 +542,26 @@ msgstr ""
 msgid "Za skautský oddíl Heřmánek Lenka Gallusová, zadavatelka webu Skaut Velká Polom"
 msgstr ""
 
-#: app/index.html:331
+#: app/index.html:341
 msgid "Zakládám si na lidském přístupu ke klientovi, vždy chci, aby přesně věděl, co dělám a proč to dělám zrovna takto."
 msgstr ""
 
-#: app/index.html:203
+#: app/index.html:213
 msgid "Zde si můžete prohlédnout mou práci. Nejedná se o kompletní portfolio, řada mých - především starších - projektů již byla archivována."
 msgstr ""
 
-#: app/index.html:195
+#: app/index.html:205
 msgid "Změňme to. Společně."
 msgstr ""
 
-#: app/index.html:452
+#: app/index.html:460
 msgid "Zpráva"
 msgstr ""
 
-#: app/index.html:459
+#: app/index.html:467
 msgid "Zpráva je povinná položka."
 msgstr ""
 
-#: app/index.html:460
+#: app/index.html:468
 msgid "Zpráva musí mít alespoň deset znaků."
 msgstr ""

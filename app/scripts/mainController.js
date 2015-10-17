@@ -184,7 +184,7 @@
          /// e-mail subject
          vm.subject = gettextCatalog.getString('Objednávka webového balíčku');
          /// e-mail message, currency to dollars
-         vm.msg = gettextCatalog.getString('Rád(a) bych si objednal(a) službu "Webový balíček" za jednotnou cenu 8 000 Kč. Kontaktujte mne, prosím, abychom se domluvili na podrobnostech.');
+         vm.msg = gettextCatalog.getString('Rád(a) bych si objednal(a) službu "Webový balíček" za jednotnou cenu 10 000 Kč. Kontaktujte mne, prosím, abychom se domluvili na podrobnostech.');
 
          scrollToContact();
       }
